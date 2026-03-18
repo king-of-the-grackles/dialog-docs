@@ -12,53 +12,60 @@
     "light": "/logo/light.png"
   },
   "favicon": "/favicon.ico",
-  "navigation": [
-    {
-      "group": "Getting Started",
-      "pages": [
-        "introduction",
-        "quickstart",
-        "getting-started/what-is-dialog",
-        "getting-started/creating-account",
-        "getting-started/your-first-query"
-      ]
-    },
-    {
-      "group": "Features",
-      "pages": [
-        "features/research-chat",
-        "features/reddit-feeds",
-        "features/data-sources",
-        "features/agent-personas"
-      ]
-    },
-    {
-      "group": "Guides",
-      "pages": [
-        "guides/effective-queries",
-        "guides/managing-feeds",
-        "guides/telegram-delivery",
-        "guides/billing-and-credits"
-      ]
-    },
-    {
-      "group": "Support",
-      "pages": [
-        "support/faq"
-      ]
-    }
-  ],
-  "topbarLinks": [
-    {
-      "name": "App",
-      "url": "https://dialogresearch.com"
-    }
-  ],
-  "topbarCtaButton": {
-    "name": "Get Started",
-    "url": "https://dialogresearch.com"
+  "navigation": {
+    "groups": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "introduction",
+          "quickstart",
+          "getting-started/what-is-dialog",
+          "getting-started/creating-account",
+          "getting-started/your-first-query"
+        ]
+      },
+      {
+        "group": "Features",
+        "pages": [
+          "features/research-chat",
+          "features/reddit-feeds",
+          "features/data-sources",
+          "features/agent-personas"
+        ]
+      },
+      {
+        "group": "Guides",
+        "pages": [
+          "guides/effective-queries",
+          "guides/managing-feeds",
+          "guides/telegram-delivery",
+          "guides/billing-and-credits"
+        ]
+      },
+      {
+        "group": "Support",
+        "pages": [
+          "support/faq"
+        ]
+      }
+    ]
   },
-  "footerSocials": {
-    "github": "https://github.com/king-of-the-grackles"
+  "navbar": {
+    "links": [
+      {
+        "label": "App",
+        "href": "https://dialogresearch.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Get Started",
+      "href": "https://dialogresearch.com"
+    }
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/king-of-the-grackles"
+    }
   }
 }
