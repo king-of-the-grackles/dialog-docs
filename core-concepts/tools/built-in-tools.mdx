@@ -1,0 +1,52 @@
+---
+title: Built-in Tools
+description: Core agent capabilities available in every session
+icon: "toolbox"
+---
+
+In addition to data source tools, your agent has a set of built-in capabilities that are always available. These handle task management, skill invocation, file operations, and workspace interaction.
+
+## Task management
+
+Your agent can create and track to-do lists directly in its workspace. Ask it to "make a list of action items from this research" or "track these competitor features I need to investigate," and it will create structured task lists you can reference in future sessions.
+
+Tasks persist in the agent's workspace, so you can pick up where you left off. This is useful for multi-session research projects where you need to track what's been covered and what's still outstanding.
+
+## Skill invocation
+
+Your agent can run any [skill](/core-concepts/skills) that exists in its workspace. Skills are reusable custom tools — things like report formatters, analysis templates, or specialized research workflows — that your agent calls by name during conversations.
+
+When a skill is invoked, the agent reads the skill's instructions and executes them within the current session context. This lets you standardize repeatable tasks without re-explaining your requirements each time.
+
+## File operations
+
+Your agent can read, write, and manage files within its workspace. This includes:
+
+- **Creating files** to store research outputs, reports, or data exports
+- **Reading files** from previous sessions to maintain context
+- **Updating files** as new information comes in
+
+File operations are how your agent maintains state between sessions. Research findings, generated reports, and reference materials all live as files in the workspace.
+
+## Command execution
+
+Your agent can run data processing and analysis commands within its workspace. This is useful for transforming data, running calculations, or performing operations that go beyond what the AI can do in its reasoning alone.
+
+Commands execute in a sandboxed environment within the agent's workspace, so they can work with files the agent has created or received from data sources.
+
+## Database operations
+
+Your agent can create, query, and manage SQLite databases within its workspace. This is valuable when you need to store structured research data, run queries across collected findings, or maintain datasets that grow over time.
+
+## How built-in tools differ from data sources
+
+Built-in tools and [data source tools](/core-concepts/tools/mcp-servers) serve different purposes.
+
+| | Built-in tools | Data source tools |
+|---|---|---|
+| **Availability** | Always on, every session | Controlled by [tool preferences](/core-concepts/tools/tool-preferences) |
+| **Scope** | Operate within the agent's workspace | Reach out to external services and APIs |
+| **Configuration** | No setup required | Some require OAuth or enablement |
+| **Examples** | File I/O, tasks, commands | Reddit search, web scraping, Gmail |
+
+Think of built-in tools as your agent's hands and data source tools as its eyes and ears. Built-in tools handle internal work — managing files, running skills, tracking tasks. Data source tools go out into the world to gather information.

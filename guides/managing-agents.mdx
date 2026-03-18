@@ -1,0 +1,54 @@
+---
+title: Managing Your Agents
+description: How to create, switch between, and customize multiple agents
+icon: "users-gear"
+---
+
+Dialog lets you run up to 10 independent agents, each with its own workspace, tools, and personality. This guide covers the day-to-day of managing your agent lineup.
+
+## Switching between agents
+
+Select any agent from the **agent selector** in the sidebar. When you switch, you'll see that agent's session history, scheduled tasks, and workspace — everything is scoped to the active agent.
+
+Each agent operates independently, so switching is more like changing desks than changing tabs.
+
+## Customizing agent behavior
+
+You can shape how an agent thinks and responds by editing its configuration:
+
+- **System prompt** — Edit the agent's custom instructions in **Settings** to change its behavior, tone, and output style
+- **SOUL.md** — Define the agent's personality traits and communication style
+- **PURPOSE.md** — Set the agent's mission and focus area
+
+These files live in the agent's persistent workspace environment and take effect on the next session.
+
+## Configuring per-agent tools
+
+Each agent can have different data sources and tools enabled. Configure which tools are available in the agent's settings.
+
+This is useful when you have agents dedicated to different workflows. A competitive research agent might need different data sources than a content strategy agent.
+
+<Tip>
+Create specialized agents for distinct research areas rather than trying to do everything with one agent. A focused agent with tailored tools and instructions will produce better results.
+</Tip>
+
+## Agent isolation
+
+Agents don't share data with each other. Each agent has its own:
+
+- Persistent workspace environment with separate files and skills
+- Session history and conversation memory
+- Scheduled tasks and delivery settings
+- Tool configurations and data source access
+
+This isolation means you can experiment with one agent without affecting others.
+
+## Deleting an agent
+
+To remove an agent, open its settings and choose **Delete Agent**. This permanently removes the agent along with its workspace, sessions, and scheduled tasks.
+
+<Warning>
+You cannot delete the default agent. If you need to reset it, edit its system prompt and clear its sessions instead.
+</Warning>
+
+For more background on agents, see [What is an Agent](/core-concepts/agents/what-is-an-agent) and [Creating Agents](/core-concepts/agents/creating-agents).

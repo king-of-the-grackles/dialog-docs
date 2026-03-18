@@ -1,0 +1,66 @@
+---
+title: Channels
+description: How Dialog delivers research results to you
+icon: "tower-broadcast"
+---
+
+Channels control where your research results are delivered, from [scheduled tasks](/core-concepts/scheduling) and manual requests alike.
+
+## Web Inbox
+
+The web inbox is Dialog's built-in delivery channel. It's always available and requires no setup.
+
+Every scheduled task result automatically appears in your web inbox, stored alongside your regular chat sessions. You can browse, search, and revisit past results at any time from within the app.
+
+The web inbox is the default channel for all scheduled tasks. Even if you add other channels, results always show up here too.
+
+## Telegram
+
+Dialog uses a per-user bot model for Telegram delivery. Instead of a shared bot, you create and register your own Telegram bot, giving you full control over who can interact with it.
+
+<Steps>
+  <Step title="Create a bot with @BotFather">
+    Open Telegram, search for **@BotFather**, and use the `/newbot` command to create your bot. You'll receive a bot token.
+  </Step>
+
+  <Step title="Register the bot token in Dialog">
+    Go to **Settings** in Dialog and paste your bot token in the Telegram integration section.
+  </Step>
+
+  <Step title="Add allowed users">
+    Specify which Telegram users are allowed to interact with your bot. This keeps your research private.
+  </Step>
+</Steps>
+
+Once connected, your Telegram bot supports these commands:
+
+| Command | What it does |
+|---|---|
+| `/new` | Start a new research session |
+| `/history` | View recent sessions |
+| `/tools` | List available data sources |
+| `/credits` | Check your credit balance |
+| `/help` | Show all available commands |
+
+Telegram isn't just for receiving scheduled results. You can chat with your agent directly through the bot, running research queries on the go without opening the app.
+
+Messages are formatted for Telegram's interface with bold text, code blocks, and clickable links. Long responses are automatically split into chunks at the 4,000-character-per-message limit so nothing gets cut off.
+
+## Multi-channel delivery
+
+A single scheduled task can deliver to multiple channels at the same time. When you configure a schedule, you can select both web inbox and Telegram to receive the same results simultaneously.
+
+This is useful when you want immediate push notifications via Telegram while keeping a permanent, searchable record in your web inbox. There's no extra credit cost for multi-channel delivery — you're charged per execution, not per channel.
+
+## Future channels
+
+Dialog is expanding its channel support. Planned integrations include:
+
+- **Discord** — deliver results to a Discord server or DM
+- **Slack** — push research to Slack channels or threads
+- **SMS** — receive summaries via text message
+- **Email** — get formatted research briefs in your inbox
+
+<Tip>
+For detailed setup instructions, see the [Telegram Delivery](/guides/telegram-delivery) guide.
+</Tip>

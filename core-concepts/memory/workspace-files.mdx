@@ -1,0 +1,66 @@
+---
+title: Workspace Files
+description: Persistent files, research notes, tasks, and databases in your agent's workspace
+icon: "folder-tree"
+---
+
+Your agent's workspace is a persistent file system where it stores research notes, task lists, custom skills, and structured data. These files survive across chat sessions and scheduled task runs.
+
+## TASKS.md
+
+`TASKS.md` is your agent's task backlog. It tracks what the agent is working on, what's queued up, and what's been completed.
+
+The file is organized into three sections:
+
+- **Active** - Tasks currently in progress
+- **Backlog** - Tasks queued for future work
+- **Completed** - Finished tasks with results or summaries
+
+Your agent updates `TASKS.md` as it works. When you ask it to research something or set up a [scheduled task](/core-concepts/scheduling), it adds an entry. When the work is done, it moves the item to **Completed** with a summary of what was found.
+
+## research/
+
+The `research/` directory is where your agent saves research notes, analysis, and reports. When Dialog completes a research task, it can persist the findings here so you can reference them later.
+
+This is especially useful for multi-session research. Your agent can pick up a previous analysis, compare new findings against earlier results, or build on past work without starting from scratch.
+
+## skills/
+
+The `skills/` directory holds custom skills that extend what your agent can do. Skills placed in this directory are auto-discovered, meaning your agent can find and use them without any extra configuration.
+
+For details on creating and managing skills, see [Skills](/core-concepts/skills).
+
+## databases/
+
+The `databases/` directory stores SQLite databases for structured data. This is one of the most powerful parts of the workspace -- it lets your agent track and query data over time.
+
+### Working with databases
+
+- Your agent accesses databases via command line tools
+- Multi-statement writes use transactions to keep data consistent
+- Database files follow a lowercase-with-hyphens naming convention (e.g., `reddit-trends.db`)
+
+### Example use cases
+
+- **Sentiment tracking** - Store Reddit sentiment scores over time and query for trends
+- **Competitive analysis** - Build a structured dataset of competitor mentions, features, and pricing
+- **Research indexing** - Catalog sources and findings across multiple research sessions for fast lookup
+
+<Tip>
+Databases are ideal when you need to compare data across time periods. If your agent runs a weekly competitive scan, it can append results to the same database and spot changes automatically.
+</Tip>
+
+## Workspace limits
+
+All files in your agent's workspace share a **50MB** total size limit. This includes identity files, research notes, databases, and everything else.
+
+| Detail | Value |
+|---|---|
+| **Total workspace size** | 50MB |
+| **Supported file types** | `.md`, `.txt`, `.json`, `.csv`, `.db` |
+| **Persistence** | Across all chat sessions and scheduled runs |
+| **Scope** | Tied to the agent, not to individual sessions |
+
+<Warning>
+If your workspace approaches the 50MB limit, consider archiving older research files or cleaning up completed task entries. Large databases are usually the first place to look.
+</Warning>

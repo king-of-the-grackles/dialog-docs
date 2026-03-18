@@ -25,27 +25,67 @@
         ]
       },
       {
+        "group": "Core Concepts",
+        "pages": [
+          "core-concepts/overview",
+          {
+            "group": "Agents",
+            "pages": [
+              "core-concepts/agents/what-is-an-agent",
+              "core-concepts/agents/creating-agents",
+              "core-concepts/agents/agent-personas"
+            ]
+          },
+          {
+            "group": "Memory & Workspace",
+            "pages": [
+              "core-concepts/memory/overview",
+              "core-concepts/memory/identity-files",
+              "core-concepts/memory/workspace-files",
+              "core-concepts/memory/session-storage"
+            ]
+          },
+          {
+            "group": "Tools",
+            "pages": [
+              "core-concepts/tools/overview",
+              "core-concepts/tools/mcp-servers",
+              "core-concepts/tools/built-in-tools",
+              "core-concepts/tools/tool-preferences"
+            ]
+          },
+          "core-concepts/skills",
+          "core-concepts/scheduling",
+          "core-concepts/channels"
+        ]
+      },
+      {
         "group": "Features",
         "pages": [
           "features/research-chat",
           "features/reddit-feeds",
-          "features/data-sources",
-          "features/agent-personas"
+          "features/feeds-discovery",
+          "features/real-time-streaming",
+          "features/session-management"
         ]
       },
       {
         "group": "Guides",
         "pages": [
           "guides/effective-queries",
+          "guides/creating-custom-skills",
           "guides/managing-feeds",
+          "guides/setting-up-scheduled-tasks",
           "guides/telegram-delivery",
+          "guides/managing-agents",
           "guides/billing-and-credits"
         ]
       },
       {
         "group": "Support",
         "pages": [
-          "support/faq"
+          "support/faq",
+          "support/troubleshooting"
         ]
       }
     ]
@@ -54,13 +94,13 @@
     "links": [
       {
         "label": "App",
-        "href": "https://dialogresearch.com"
+        "href": "https://app.dialog.tools"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Get Started",
-      "href": "https://dialogresearch.com"
+      "href": "https://app.dialog.tools"
     }
   },
   "footer": {

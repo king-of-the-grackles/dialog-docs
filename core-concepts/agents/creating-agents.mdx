@@ -1,0 +1,67 @@
+---
+title: Creating Agents
+description: How to create and configure new agents for different research needs
+icon: "circle-plus"
+---
+
+Dialog supports multiple agents per account, each with its own workspace, tools, and personality. Create specialized agents for different research domains or workflows.
+
+## Creating a new agent
+
+<Steps>
+  <Step title="Open the agent creation modal">
+    Click **Create Agent** from the agent switcher in the sidebar. This opens the creation modal where you'll configure your new agent.
+  </Step>
+
+  <Step title="Name your agent">
+    Enter a descriptive name for your agent. Dialog automatically generates a URL-safe slug from the name — for example, "Sales Intel" becomes `sales-intel`. Choose a name that reflects the agent's purpose so it's easy to identify later.
+  </Step>
+
+  <Step title="Define the agent's personality and mission">
+    Customize your agent's behavior using two optional fields:
+
+    - **SOUL.md** — Defines the agent's personality, communication style, and general approach to research
+    - **PURPOSE.md** — Describes the agent's mission, focus areas, and what it's designed to help with
+
+    These [identity files](/core-concepts/memory/identity-files) shape how the agent responds and what it prioritizes. You can always edit them later.
+  </Step>
+
+  <Step title="Configure data sources">
+    Choose which data sources your agent can access. Each agent can have a different set of [enabled tools](/core-concepts/tools/tool-preferences), so a competitive research agent might have different sources than a content analysis agent.
+  </Step>
+
+  <Step title="Save and start researching">
+    Click **Create** to finalize your agent. It will appear in the agent switcher, ready for your first query. The agent's workspace provisions automatically when you start your first research chat.
+  </Step>
+</Steps>
+
+## Custom system prompts
+
+Each agent can have a custom system prompt that shapes its behavior and output style. This is where the SOUL.md and PURPOSE.md content comes in — they act as persistent instructions that the agent follows across every session.
+
+For example, you might instruct an agent to always format output as bullet points, focus on quantitative data, or adopt a specific tone. The system prompt stays active across all of that agent's sessions, so you don't need to repeat instructions.
+
+<Tip>
+Keep system prompts focused and specific. An agent told to "be an expert in everything" won't perform as well as one instructed to "analyze competitor pricing strategies and highlight customer sentiment trends."
+</Tip>
+
+## When to create multiple agents
+
+Multiple agents shine when you have distinct research contexts that shouldn't overlap:
+
+- **Competitive research vs. customer discovery** — Keep competitor intelligence separate from customer feedback analysis
+- **Different projects or clients** — Give each project its own agent with tailored instructions and data sources
+- **Experimentation** — Test different system prompts and tool configurations without affecting your primary agent
+- **Specialized workflows** — Set up one agent for quick lookups and another for deep-dive research
+
+If you're unsure, start with the [Default Agent](/core-concepts/agents/what-is-an-agent) and create additional agents as your needs evolve. You can also explore the [managing agents guide](/guides/managing-agents) for tips on organizing a multi-agent setup.
+
+## Limits and considerations
+
+| Resource | Limit |
+|---|---|
+| Agents per account | 10 |
+| Workspace storage per agent | 50MB |
+| Agent name | Required, must be unique |
+
+Agent names must be unique across your account. If you delete an agent, its name becomes available again — but all associated data, workspace files, and session history are permanently removed.

@@ -1,0 +1,63 @@
+---
+title: Setting Up Scheduled Tasks
+description: How to create and manage automated recurring research
+icon: "calendar-clock"
+---
+
+Scheduled tasks let your agent run research automatically on a recurring basis and deliver results to you without lifting a finger.
+
+## Creating a schedule
+
+<Steps>
+  <Step title="Open schedule settings">
+    Navigate to your agent's schedule settings from the agent menu. This is where you create and manage all recurring tasks.
+  </Step>
+
+  <Step title="Name your schedule and write a prompt">
+    Give your schedule a descriptive name, then write the research prompt your agent will execute each time it runs. You have up to 2,000 characters — write it like you're briefing a research analyst.
+  </Step>
+
+  <Step title="Choose an interval">
+    Select how often the task should run. Options include hourly, daily, and weekly intervals. The minimum gap between executions is 60 minutes.
+  </Step>
+
+  <Step title="Set your timezone">
+    Choose the timezone that matches when you want results delivered. A daily task set to 9:00 AM will run at 9:00 AM in your selected timezone.
+  </Step>
+
+  <Step title="Select delivery channels">
+    Choose where results are sent: your **web inbox**, **Telegram**, or both. You'll get the full research output delivered to whichever channels you pick.
+  </Step>
+</Steps>
+
+## Writing good schedule prompts
+
+Scheduled tasks run without your supervision, so clear prompts are critical. A few guidelines:
+
+- **Be specific about scope** — "Summarize the top 5 posts in r/SaaS from the past 24 hours" works better than "What's new in SaaS?"
+- **Include format preferences** — Tell the agent how to structure the output (bullet points, table, executive summary)
+- **Define what matters** — Specify what you want prioritized: sentiment, trends, competitor mentions, engagement levels
+
+| Interval | Good for |
+|---|---|
+| Every hour | Fast-moving topics, breaking trends, competitor monitoring |
+| Daily at 9 AM | Morning briefings, overnight activity summaries |
+| Weekly on Mondays | Trend reports, weekly roundups, market overviews |
+
+## Limits and credits
+
+Each account can have up to **5 active schedules**. Every execution consumes 1 credit from your balance, so factor frequency into your credit planning.
+
+## Handling paused tasks
+
+If a scheduled task fails 3 times in a row, it auto-pauses to prevent wasting credits. When this happens:
+
+1. Review your prompt for issues — overly broad queries or references to unavailable data sources are common culprits
+2. Check that your delivery channels are still connected
+3. Edit the schedule if needed, then **resume** it from the schedule settings
+
+<Warning>
+Paused tasks do not resume on their own. You need to manually review and restart them.
+</Warning>
+
+For more on how scheduling works, see [Scheduling](/core-concepts/scheduling). To configure delivery channels, see [Channels](/core-concepts/channels).

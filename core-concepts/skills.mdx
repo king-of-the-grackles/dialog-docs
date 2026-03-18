@@ -1,0 +1,68 @@
+---
+title: Skills
+description: Reusable custom tools you can teach your agent
+icon: "wand-magic-sparkles"
+---
+
+Skills are reusable, persistent custom tools that live in your agent's workspace. Once created, a skill is automatically available in every future session — giving your agent new capabilities tailored to your specific workflows.
+
+## What is a skill?
+
+A skill is a set of instructions your agent follows when you invoke it by name. Each skill lives in its own folder within the workspace's `skills/` directory and is defined by a `SKILL.md` file.
+
+The `SKILL.md` file has two parts:
+
+- **YAML frontmatter** with the skill's `name` and `description`
+- **Markdown body** with the instructions your agent follows when the skill is invoked
+
+Skills can also include supporting files — helper scripts in a `scripts/` directory, reference documents in `references/`, templates, or any other assets the skill needs.
+
+```markdown
+---
+name: weekly-digest
+description: Generates a weekly summary of key discussions across tracked communities
+---
+
+## Instructions
+
+1. Check the tracked subreddits list in /workspace/config/subreddits.txt
+2. For each subreddit, fetch the top posts from the past 7 days
+3. Summarize key themes, trending topics, and notable discussions
+4. Format the output as a structured digest with sections per community
+```
+
+<Warning>
+Keep your SKILL.md files under 500 lines. Shorter, focused skills perform better than long, complex ones.
+</Warning>
+
+## Auto-discovery
+
+When your agent starts a new session, it scans the `skills/` directory and loads every skill it finds. There is no registration step — drop a skill folder into the directory and it's available.
+
+One important detail: skills created during a session are available in every **future** session, not the current one. The agent discovers skills at session start, so a newly created skill will be ready the next time you chat.
+
+## Invoking skills
+
+Reference a skill by name in your conversation and the agent will run it. You can say things like "run the weekly-digest skill" or "use competitive-intel to analyze Notion." The agent matches your request to the skill's name and follows the instructions in the SKILL.md file.
+
+Skills execute within the same session context as your conversation, so they can reference previous messages, use data from earlier tool calls, and write results to the workspace.
+
+## Built-in skills
+
+Dialog comes with a set of pre-built skills to get you started:
+
+- **Feed creation** — set up monitored Reddit feeds for specific topics
+- **Scheduling** — configure recurring research tasks
+- **Trending topics** — identify what's gaining traction in target communities
+- **Competitive intel** — structured competitor analysis workflows
+- **Pain point analysis** — extract and categorize user complaints and frustrations
+
+These built-in skills follow the same structure as custom skills, so you can read their SKILL.md files to learn how they work and use them as templates for your own.
+
+## Creating your own skills
+
+You can create skills manually by adding folders to the `skills/` directory, or use Dialog's built-in skill creator to generate them through conversation. Describe what you want the skill to do, and your agent will scaffold the folder structure and SKILL.md file for you.
+
+<Tip>
+For a step-by-step walkthrough of creating your first skill, see the [Creating Custom Skills](/guides/creating-custom-skills) guide.
+</Tip>
