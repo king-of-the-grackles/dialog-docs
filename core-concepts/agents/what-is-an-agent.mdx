@@ -4,26 +4,37 @@ description: Understanding Dialog's agent model and how agents work
 icon: "robot"
 ---
 
-An agent in Dialog is an independent AI research assistant with its own dedicated workspace, tool configuration, and personality. Each agent operates in isolation, maintaining its own memory and context across every interaction.
+An agent in Dialog is a specialized AI assistant with its own dedicated workspace, tool configuration, and personality. Each agent operates independently, maintaining its own memory and context across every interaction. Think of agents as team members you deploy for different jobs.
 
 ## Agent architecture
 
-Every agent you create gets its own persistent workspace environment — a dedicated runtime that persists across sessions. This workspace stores your agent's [identity files](/core-concepts/memory/identity-files), uploaded documents, and any research artifacts it generates.
+Every agent you create gets its own persistent workspace environment -- a dedicated runtime that persists across sessions. This workspace stores your agent's [identity files](/core-concepts/memory/identity-files), saved content, research notes, task lists, databases, and custom skills.
 
 An agent bundles four key components:
 
-- **Workspace** — A persistent workspace environment with up to 50MB of storage for files, notes, and research data
-- **Tool configuration** — A customizable set of [enabled data sources](/core-concepts/tools/tool-preferences) that determine what the agent can access
-- **Session history** — A full record of every research chat and follow-up conversation
-- **Scheduled tasks** — Any automated research or monitoring jobs the agent runs on your behalf
+- **Workspace** -- A persistent environment with up to 50MB of storage for files, notes, research, bookmarks, and databases
+- **Tool configuration** -- A customizable set of [enabled data sources](/core-concepts/tools/tool-preferences) that determine what the agent can access (74+ tools available)
+- **Session history** -- A full record of every conversation, research chat, and follow-up
+- **Scheduled tasks** -- Any automated research, monitoring, or briefing jobs the agent runs on your behalf
 
-These components work together to give each agent a distinct research capability and memory.
+These components work together to give each agent a distinct capability and growing knowledge base.
+
+## Named personas
+
+Agents come with pre-configured [personas](/core-concepts/agents/agent-personas) optimized for different workflows:
+
+- **Chief of Staff** -- Strategic assistant for managing tasks, saving links, organizing research, and daily briefings
+- **Research Analyst** -- Deep-dive researcher for competitive intelligence, market analysis, and comprehensive reports
+- **Content Strategist** -- Content-focused assistant for ideation, drafting posts, and workshopping marketing copy
+- **Custom Agent** -- Build your own persona with a name and instructions tailored to your needs
+
+Each persona shapes how the agent approaches tasks, structures its output, and communicates with you. See [Agent Personas](/core-concepts/agents/agent-personas) for details.
 
 ## One default agent
 
-Every Dialog account comes with a **Default Agent** that's ready to use right away. This is the agent you interact with when you first sign in and start asking questions.
+Every Dialog account comes with a **Default Agent** that's ready to use right away. This is the agent you interact with when you first sign in.
 
-The Default Agent works like any other agent — it has its own workspace, tool configuration, and session history. The only difference is that it can't be deleted. Think of it as your home base for research.
+The Default Agent works like any other agent -- it has its own workspace, tool configuration, and session history. The only difference is that it can't be deleted. Think of it as your home base.
 
 You can [create additional agents](/core-concepts/agents/creating-agents) whenever you need a specialized assistant for a different domain or workflow.
 
@@ -33,18 +44,27 @@ Agents are fully independent from each other. They don't share workspaces, sessi
 
 This isolation is intentional. It means you can:
 
-- Configure one agent for competitive research and another for content analysis without any bleed-through
-- Give different agents access to different data sources based on their purpose
-- Keep research contexts completely separate across projects or teams
+- Run a Chief of Staff for day-to-day operations and a Research Analyst for deep competitive dives without any bleed-through
+- Give different agents access to different tools based on their purpose
+- Keep research contexts completely separate across projects
 
-If you need to share information between agents, you can copy relevant findings from one session into another manually.
+If you need to share information between agents, you can reference findings from one agent in a conversation with another, or use connected apps to store findings in shared tools like Notion or Google Docs.
 
 <Warning>
 Deleting an agent permanently removes its workspace, session history, and all associated data. This action cannot be undone.
 </Warning>
 
+## When to use multiple agents
+
+| Scenario | Approach |
+|---|---|
+| One person, multiple workflows | Create agents for each major workflow (research, content, operations) |
+| Different projects | One agent per project to keep contexts clean |
+| Team members | Each person gets their own agent(s) with personalized workspaces |
+| Experimentation | Spin up a new agent to test a workflow without affecting your main workspace |
+
 ## Lazy provisioning
 
-Agent workspaces are created on first interaction, not when the agent is initially set up. This means your agent's persistent workspace environment spins up the first time you send a query or interact with it.
+Agent workspaces are created on first interaction, not when the agent is initially set up. This keeps account creation fast and avoids allocating resources for agents you haven't started using yet.
 
-This approach keeps account creation fast and avoids allocating resources for agents you haven't started using yet. You can create up to **10 concurrent agents** per account, and each one provisions its workspace independently when you first engage with it.
+You can create up to **10 concurrent agents** per account, and each one provisions its workspace independently when you first engage with it.

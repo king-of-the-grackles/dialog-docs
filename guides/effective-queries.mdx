@@ -1,12 +1,12 @@
 ---
-title: Writing Effective Queries
-description: Tips and patterns for getting the best research results
+title: Working Effectively with Your Agent
+description: Patterns and tips for getting the most out of Dialog
 icon: "lightbulb"
 ---
 
-The quality of your research output depends largely on how you frame your questions. Here are patterns and tips for getting the most out of Dialog.
+Your agent responds to natural language -- research questions, commands, follow-ups, and instructions all work. Here are the patterns that get the best results.
 
-## Query patterns that work well
+## Research queries
 
 ### Be specific about the topic and angle
 
@@ -52,14 +52,73 @@ The quality of your research output depends largely on how you frame your questi
   </Tab>
 </Tabs>
 
+## Command patterns
+
+Beyond research, your agent handles many types of instructions:
+
+| Pattern | Example |
+|---|---|
+| **Save a link** | "Save this for me: [URL]" |
+| **Add to tasks** | "Add to my task list: review competitor pricing" |
+| **Draft content** | "Draft a LinkedIn post about AI agent tools" |
+| **File to workspace** | "Save all of this to the workspace -- create a research file and add bookmarks" |
+| **Update files** | "Add this to our competitive research" |
+| **Scrape and analyze** | "Scrape their website and see how they position themselves" |
+| **Create a skill** | "Create a skill so you know how to convert markdown to Google Docs" |
+
+You don't need specific syntax. Natural language like "remind me to..." or "I need to track..." works just as well as explicit commands.
+
+## Multi-session patterns
+
+Your agent remembers everything in its workspace. Use that continuity:
+
+```
+Add this to our OpenClaw research
+```
+
+```
+Can you find the competitors we saved last week?
+```
+
+```
+What links do we have related to AI agent frameworks?
+```
+
+```
+Can you track down Dialog related research files?
+```
+
+Referencing past work naturally ("our research", "the competitors we saved") tells your agent to search its workspace and build on previous findings.
+
+## Iteration patterns
+
+Dialog is built for back-and-forth. Iterate on results:
+
+```
+I like this one but it needs to skew more towards the original angle
+```
+
+```
+Give me 5 more options, each with a different approach
+```
+
+```
+OK let's move forward with option F
+```
+
+```
+No em dashes please
+```
+
+Your agent maintains full context within a session, so each message builds on the last. Don't re-explain -- just give direction.
+
 ## Follow-up strategies
 
-Dialog maintains full context within a session. Use follow-ups to refine your research:
-
-1. **Start broad, then narrow** - Begin with an overview question, then drill into specifics
-2. **Shift angles** - Ask about sentiment, then pricing, then features
-3. **Compare and contrast** - After researching one topic, ask how it compares to alternatives
-4. **Request different formats** - Ask for a summary table, bullet points, or a different structure
+1. **Start broad, then narrow** -- Begin with an overview question, then drill into specifics
+2. **Shift angles** -- Ask about sentiment, then pricing, then features
+3. **Compare and contrast** -- After researching one topic, ask how it compares to alternatives
+4. **Request different formats** -- Ask for a summary table, bullet points, or a different structure
+5. **Save what matters** -- When you find something useful, tell your agent to save it to the workspace
 
 ## Common research tasks
 
@@ -71,3 +130,5 @@ Dialog maintains full context within a session. Use follow-ups to refine your re
 | Feature prioritization | "What features do people wish [product category] tools had?" |
 | Market sizing | "How active are the communities around [topic]? What's the engagement like?" |
 | Customer pain points | "What are the biggest frustrations with [existing solution]?" |
+| Comprehensive report | "Build a comprehensive competitive report on [company]. Use all available tools." |
+| Tool discovery | "Can you track down the best tools for [task]? Use Reddit and web search." |

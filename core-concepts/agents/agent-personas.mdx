@@ -1,57 +1,72 @@
 ---
 title: Agent Personas
-description: Specialized AI agents for different research tasks
+description: Specialized AI agents for different workflows
 icon: "users"
 ---
 
-Dialog offers specialized AI agent personas, each optimized for a different type of research task. Think of them as team members with distinct expertise.
+Dialog offers specialized AI agent personas, each optimized for a different type of work. Think of them as team members with distinct expertise and working styles.
 
 <Info>
-Personas are pre-configured agent profiles. To learn about the underlying agent system and how to create your own, see [What is an Agent?](/core-concepts/agents/what-is-an-agent) and [Creating Agents](/core-concepts/agents/creating-agents).
+Personas are pre-configured agent profiles. To learn about the underlying agent system, see [What is an Agent?](/core-concepts/agents/what-is-an-agent) and [Creating Agents](/core-concepts/agents/creating-agents).
 </Info>
 
-## Available personas
+## Built-in personas
 
 <CardGroup cols={2}>
   <Card title="Chief of Staff" icon="briefcase">
-    Strategic research assistant. Excels at synthesizing information across sources, identifying priorities, and producing executive-level briefs.
+    Your strategic right hand. Manages tasks, saves and organizes links, tracks projects, produces daily briefings, and keeps everything running. Best for day-to-day operations and personal productivity.
   </Card>
   <Card title="Research Analyst" icon="chart-mixed">
-    Deep-dive researcher. Goes thoroughly into topics, pulls extensive data, and produces detailed analysis with comprehensive citations.
+    Deep-dive researcher. Produces comprehensive competitive reports, analyzes market signals, synthesizes findings from multiple sources, and builds research collections over time.
   </Card>
   <Card title="Content Strategist" icon="pen-nib">
-    Content-focused research. Identifies trending topics, analyzes what resonates with audiences, and surfaces content opportunities.
+    Content collaborator. Identifies trending topics, drafts LinkedIn posts and marketing copy, workshops messaging, and manages your content pipeline from ideation to publication.
   </Card>
   <Card title="Custom Agent" icon="wand-magic-sparkles">
-    Build your own agent persona with a custom name and specialized instructions tailored to your specific research needs.
+    Build your own agent persona with a custom name and specialized instructions tailored to your specific workflow.
   </Card>
 </CardGroup>
 
 ## Choosing a persona
 
-Each persona brings a different lens to your research:
+Each persona brings a different lens to your work:
 
-| Persona | Best for | Output style |
+| Persona | Best for | Typical tasks |
 |---|---|---|
-| Chief of Staff | Strategic decisions, competitive landscape | Executive briefs, prioritized insights |
-| Research Analyst | Deep market research, trend analysis | Detailed reports, data-heavy findings |
-| Content Strategist | Content planning, audience understanding | Topic suggestions, engagement analysis |
-| Custom | Your specific use case | Defined by your instructions |
+| Chief of Staff | Day-to-day operations, personal productivity | Save links, manage tasks, daily recaps, organize workspace, track projects |
+| Research Analyst | Competitive intelligence, market research | Competitive reports, trend analysis, market sizing, comprehensive research briefs |
+| Content Strategist | Content creation, marketing | Draft posts, workshop copy, content ideation, audience analysis, pipeline management |
+| Custom | Your specific workflow | Defined by your instructions |
 
-## Switching personas
+## Persona archetypes to consider
 
-You can switch between agent personas from the chat interface. Each persona maintains its own approach to researching and structuring responses, so experiment to find which works best for your use case.
+Beyond the built-in personas, here are agent configurations that work well for specific roles:
 
-<Tip>
-Start with the **Research Analyst** persona for your first few queries. It provides the most comprehensive output and helps you understand the depth of data Dialog can access.
-</Tip>
+| Archetype | Focus |
+|---|---|
+| **Competitor Tracker** | Monitor competitor launches, pricing changes, and positioning updates |
+| **Growth Agent** | Lead qualification, outreach research, and partnership signals |
+| **Analytics Agent** | KPI summaries, anomaly detection, and performance metrics |
+| **Community Intel** | Reddit, Hacker News, and X conversation monitoring |
+| **Feedback Synthesizer** | Cluster user feedback into themes from support tickets and forums |
+| **DevRel Agent** | GitHub issues, developer pain points, and technical community monitoring |
+
+You can create any of these by making a [custom agent](/core-concepts/agents/creating-agents) with the right name, purpose, and instructions.
 
 ## How personas relate to agents
 
-Each persona is backed by a full [agent](/core-concepts/agents/what-is-an-agent) with its own workspace and memory. When you switch personas, you're switching to a different agent — each with its own conversation history, saved research, and custom skills.
+Each persona is backed by a full [agent](/core-concepts/agents/what-is-an-agent) with its own workspace and memory. When you switch personas, you're switching to a different agent -- each with its own conversation history, saved research, task list, and custom skills.
 
-This means your Chief of Staff persona doesn't see the research your Research Analyst has done, and vice versa. Each persona operates in its own isolated workspace with separate session histories, tool configurations, and stored files.
+This means your Chief of Staff's saved links and task list stay separate from your Research Analyst's competitive reports. Each persona operates in its own isolated workspace.
 
-This separation is powerful for keeping different research contexts clean. Your competitive intelligence stays with the persona you used to gather it, and your content research lives with the persona that produced it. If you want to bring insights from one persona into another, reference the findings in a new query.
+This separation is powerful for keeping different contexts clean. Your competitive intelligence stays with the Research Analyst. Your content pipeline stays with the Content Strategist. Your daily operations stay with your Chief of Staff.
 
-You can also [create your own agents](/core-concepts/agents/creating-agents) with custom personas tailored to your specific workflow — combining the personality and instructions you need with the data sources that matter most.
+## Switching personas
+
+You can switch between agent personas from the chat interface. Each persona maintains its own approach to tasks, so experiment to find which works best for each workflow.
+
+<Tip>
+Start with the **Chief of Staff** persona for general use. It handles the broadest range of tasks -- saving links, managing tasks, research, and organizing your workspace. Create specialized agents as your needs grow.
+</Tip>
+
+You can also [create your own agents](/core-concepts/agents/creating-agents) with custom personas -- combining the personality and instructions you need with the data sources that matter most.

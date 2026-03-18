@@ -1,0 +1,91 @@
+---
+title: Saving Links & Building Your Knowledge Base
+description: How to save, organize, and retrieve content with your agent
+icon: "bookmark"
+---
+
+One of the most common ways people use Dialog is as a knowledge capture tool. Send any URL to your agent, and it scrapes, enriches, and files the content in your workspace for later retrieval.
+
+## Saving a link
+
+Send a URL to your agent with a simple instruction:
+
+```
+Save this for me: https://example.com/interesting-tool
+```
+
+Your agent will:
+1. **Scrape the page** -- Extract the main content, title, and metadata
+2. **Summarize it** -- Create a concise description of what the page contains
+3. **Tag it** -- Categorize the content based on topic (e.g., AI tools, competitive intel, marketing)
+4. **File it** -- Store it in your workspace's bookmarks or research collection
+
+You can also provide context to guide how it's filed:
+
+```
+Save this to our competitive research: https://example.com/competitor-launch
+```
+
+```
+Add this to my bookmarks: https://github.com/org/interesting-repo
+```
+
+## Where saved content lives
+
+Saved content is stored in your agent's persistent [workspace](/core-concepts/memory/workspace-files). Depending on what you save and the context, your agent may file it in:
+
+- **Bookmarks** -- Quick-save links with summaries and tags
+- **research/** -- Longer research notes, competitive analysis, topic collections
+- **databases/** -- Structured data like competitive trackers or content pipelines
+
+All of this persists across sessions. Your agent can access it days or weeks later.
+
+## Retrieving saved content
+
+Ask your agent to find previously saved content naturally:
+
+```
+Can you find the competitors we saved last week?
+```
+
+```
+What links do we have related to AI agent frameworks?
+```
+
+```
+Can you enumerate everything in our competitive research?
+```
+
+Your agent searches its workspace files and surfaces what it finds. The more organized your saves, the easier retrieval becomes.
+
+## Building research collections
+
+Over time, you can build topical collections by consistently saving related content:
+
+```
+Add this to our OpenClaw research: https://example.com/article
+```
+
+```
+Save this -- it's another competitor in the agent space: https://example.com
+```
+
+Your agent recognizes the pattern and groups related content together. This is especially powerful for:
+
+- **Competitive intelligence** -- Save every competitor you encounter, and your agent maintains an evolving landscape view
+- **Market research** -- Collect articles, tools, and discussions around a theme
+- **Inspiration files** -- Save marketing copy, design examples, or product ideas you want to reference later
+
+## Tips
+
+<Tip>
+You don't need to be precise about where to file things. Your agent is smart about categorization. Just say "save this for me" and it will figure out the best location based on your workspace's existing structure.
+</Tip>
+
+<Tip>
+Chain saves in a single session. If you're browsing and find multiple links, send them one after another. Your agent maintains context within the session and can batch-organize them.
+</Tip>
+
+<Tip>
+Periodically ask your agent to show you what's in your workspace. This helps you understand the structure and makes future retrievals more targeted.
+</Tip>

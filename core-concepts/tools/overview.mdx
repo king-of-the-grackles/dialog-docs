@@ -1,43 +1,65 @@
 ---
 title: Tools Overview
-description: Understanding the tools and data sources your agent uses for research
+description: Understanding the 74+ tools and data sources your agent uses
 icon: "wrench"
 ---
 
-Tools are the capabilities your agent uses to gather information and take actions. Dialog connects to multiple data sources through the Model Context Protocol (MCP), giving your agent access to Reddit, web search, social media, forums, and more.
+Tools are the capabilities your agent uses to gather information, scrape content, and interact with external services. Dialog connects to 74+ tools across multiple categories, giving your agent broad reach without any configuration on your part.
 
 ## What are tools?
 
-Tools are specialized functions your agent calls during research to fetch data, search sources, and interact with external services. Under the hood, Dialog uses the **Model Context Protocol (MCP)** — an open standard for connecting AI agents to data sources — to manage these connections.
+Tools are specialized functions your agent calls to fetch data, search sources, scrape pages, and interact with connected services. Under the hood, Dialog uses the **Model Context Protocol (MCP)** -- an open standard for connecting AI agents to data sources -- to manage these connections.
 
-You don't need to understand MCP to use Dialog. What matters is that each tool gives your agent a specific capability: searching Reddit, scraping a webpage, pulling Instagram posts, or reading your Gmail. When you ask a question, your agent picks the right tools automatically.
+You don't need to understand MCP to use Dialog. What matters is that each tool gives your agent a specific capability. When you ask a question or give an instruction, your agent picks the right tools automatically.
 
-## Tool categories
+## Available integrations
 
-Dialog organizes tools into categories based on what they do.
+Dialog connects to a wide range of platforms and services:
 
-| Category | What it covers | Examples |
-|---|---|---|
-| **Research** | Community discussions and forums | Reddit communities, Discourse forums |
-| **Web** | Public web content | Search engines, page scraping, content extraction |
-| **Social Media** | Social platform data | Instagram, Facebook, TikTok, YouTube, X (Twitter) |
-| **Business Intelligence** | Company and professional data | Company profiles, professional databases |
-| **Connected Apps** | Your own tools via OAuth | Gmail, Slack, Google Calendar, Jira, Linear, Notion, and 15+ more |
+| Category | Platforms |
+|---|---|
+| **Research & Forums** | Reddit, Discourse |
+| **Web Intelligence** | Web search, page scraping, content extraction |
+| **Social Media** | Instagram, TikTok, YouTube, X, Facebook, LinkedIn |
+| **Communication** | Gmail, Slack, Telegram, Discord, WhatsApp, Zoom |
+| **Project Management** | Jira, Linear, Asana, Notion |
+| **Business Intelligence** | Salesforce, HubSpot, Crunchbase, Intercom |
+| **Developer Tools** | GitHub |
+| **Productivity** | Google Calendar, Google Sheets, Google Docs, Figma |
+| **Analytics** | Google Analytics, PostHog |
+| **App Stores** | App Store, Google Play |
 
-Each category contains one or more [data sources](/core-concepts/tools/mcp-servers) that your agent can query. You control which categories are active through [tool preferences](/core-concepts/tools/tool-preferences).
+<Info>
+New integrations are added regularly. The total count currently stands at 74+ tools across these categories.
+</Info>
 
 ## How tools are invoked
 
-You don't need to tell your agent which tools to use — it figures that out from your question.
+You don't need to tell your agent which tools to use -- it figures that out from your message.
 
-When you ask something like "What are people saying about Notion on Reddit and Twitter?", the agent:
+When you send something like "What are people saying about Notion on Reddit and X?", the agent:
 
-- **Analyzes your query** to identify the relevant platforms (Reddit, X/Twitter)
-- **Selects the matching tools** from its available data sources
+- **Analyzes your message** to identify the relevant platforms (Reddit, X)
+- **Selects the matching tools** from its available integrations
 - **Runs them in parallel** where possible to minimize wait time
 - **Combines the results** into a single, unified response
 
+This also works for non-research tasks. When you say "Save this for me: [URL]", the agent selects web scraping tools. When you say "Put this on my calendar", it uses your connected calendar integration.
+
 If a tool isn't enabled in your [preferences](/core-concepts/tools/tool-preferences), the agent skips it and works with what's available. You'll see exactly which tools were invoked in the activity indicators below each response.
+
+## Connected apps
+
+Some tools require you to authorize access through OAuth. These "connected apps" let your agent interact with your existing tools:
+
+- Read and send emails (Gmail)
+- Create and update issues (Jira, Linear)
+- Post to channels (Slack)
+- Manage documents (Notion, Google Docs)
+- Update spreadsheets (Google Sheets)
+- Schedule events (Google Calendar)
+
+Connect apps from your account settings. Once connected, your agent can use them automatically when relevant.
 
 <CardGroup cols={2}>
   <Card title="Data Sources" icon="server" href="/core-concepts/tools/mcp-servers">

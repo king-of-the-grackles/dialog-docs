@@ -1,0 +1,77 @@
+---
+title: Scheduled Briefings & Monitoring
+description: Set up automated research, competitive monitoring, and recurring briefings
+icon: "clock"
+---
+
+Dialog agents can run research and monitoring tasks on a schedule, delivering results automatically so you start each day with the intelligence that matters.
+
+## What scheduled tasks can do
+
+Scheduled tasks run on a recurring cadence (daily, weekly, or custom intervals) and execute within your agent's workspace. They have access to the same tools and memory as your interactive sessions, which means they can:
+
+- **Monitor competitors** -- Scan competitor websites, social media, and community discussions for changes
+- **Track trending topics** -- Surface what's being discussed in specific subreddits or communities
+- **Generate briefings** -- Produce daily or weekly summaries of activity across your monitored topics
+- **Update databases** -- Append new data to your workspace databases for longitudinal analysis
+- **Flag changes** -- Alert you when something noteworthy happens (pricing changes, product launches, trending discussions)
+
+## Setting up a scheduled task
+
+Tell your agent what you want monitored and how often:
+
+```
+Set up a daily scan of r/SaaS and r/startups for any mentions of AI agent tools. Summarize the top posts.
+```
+
+```
+Every Monday morning, give me a competitive briefing on what our top 3 competitors have shipped or announced in the past week.
+```
+
+```
+Check our competitor's pricing page weekly and flag any changes.
+```
+
+Your agent creates the scheduled task and stores it in your workspace. For more details on the scheduling system, see [Scheduling](/core-concepts/scheduling).
+
+## Receiving results
+
+Scheduled task results can be delivered through multiple channels:
+
+- **In-app** -- Results appear in your session history, ready to review when you open Dialog
+- **Telegram** -- Get briefings pushed directly to your Telegram chat
+- **Slack, Discord, WhatsApp** -- Connect additional messaging channels for delivery
+
+Set up delivery via [Channels](/core-concepts/channels) or by telling your agent:
+
+```
+Send my daily briefings to Telegram
+```
+
+## End-of-day recaps
+
+A popular pattern is having your agent generate a daily recap of everything that happened:
+
+```
+At the end of each day, give me a summary of:
+- Bookmarks captured
+- Research completed
+- Tasks updated
+- Any competitive signals detected
+```
+
+This turns your agent into a true Chief of Staff that keeps you informed without you having to check in.
+
+## Tips
+
+<Tip>
+Start with one or two scheduled tasks and expand from there. A daily Reddit trends scan and a weekly competitive briefing cover a lot of ground.
+</Tip>
+
+<Tip>
+Scheduled tasks share your agent's workspace. This means a weekly competitive scan can append to the same database your interactive research uses, building a longitudinal dataset automatically.
+</Tip>
+
+<Tip>
+Combine scheduled monitoring with [skills](/core-concepts/skills) for more sophisticated workflows. A custom skill can define exactly how your agent should format competitive updates or what criteria to use when flagging pricing changes.
+</Tip>
