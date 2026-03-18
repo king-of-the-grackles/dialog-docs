@@ -1,0 +1,64 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Dialog Docs",
+  "theme": "mint",
+  "colors": {
+    "primary": "#7C88C0",
+    "light": "#8E99CC",
+    "dark": "#6A76AE"
+  },
+  "logo": {
+    "dark": "/logo/dark.png",
+    "light": "/logo/light.png"
+  },
+  "favicon": "/favicon.ico",
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "introduction",
+        "quickstart",
+        "getting-started/what-is-dialog",
+        "getting-started/creating-account",
+        "getting-started/your-first-query"
+      ]
+    },
+    {
+      "group": "Features",
+      "pages": [
+        "features/research-chat",
+        "features/reddit-feeds",
+        "features/data-sources",
+        "features/agent-personas"
+      ]
+    },
+    {
+      "group": "Guides",
+      "pages": [
+        "guides/effective-queries",
+        "guides/managing-feeds",
+        "guides/telegram-delivery",
+        "guides/billing-and-credits"
+      ]
+    },
+    {
+      "group": "Support",
+      "pages": [
+        "support/faq"
+      ]
+    }
+  ],
+  "topbarLinks": [
+    {
+      "name": "App",
+      "url": "https://dialogresearch.com"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Get Started",
+    "url": "https://dialogresearch.com"
+  },
+  "footerSocials": {
+    "github": "https://github.com/king-of-the-grackles"
+  }
+}
