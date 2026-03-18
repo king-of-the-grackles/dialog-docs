@@ -1,0 +1,68 @@
+---
+title: Scheduling
+description: Set up recurring automated research tasks
+icon: "clock"
+---
+
+Automate your research by setting up recurring tasks that run on a cron-based schedule with timezone support.
+
+## How scheduling works
+
+When you create a schedule, Dialog registers your research prompt with the scheduling engine and begins executing it at the intervals you define. Each execution runs in the same persistent workspace environment as your chat sessions, so scheduled tasks have access to all your workspace files.
+
+Here's the flow:
+
+1. **You create a schedule** with a prompt, cron expression, and delivery preferences
+2. **The scheduling engine triggers your task** at the specified times
+3. **Dialog runs your research prompt** just like an interactive chat session
+4. **Results are delivered** to your chosen [channels](/core-concepts/channels) — web inbox, Telegram, or both
+
+Each execution costs 1 credit, charged when the task runs.
+
+## Schedule configuration
+
+When creating a schedule, you'll provide:
+
+- **Name** — a label to identify this schedule in your dashboard
+- **Cron expression** — defines when the task runs (e.g., `0 9 * * 1-5` for weekday mornings at 9 AM)
+- **Timezone** — defaults to UTC, but you can set it to your local timezone
+- **Prompt** — the research question or instructions, up to 2,000 characters
+- **Delivery channels** — where results go, defaults to web inbox
+
+There are a few constraints to keep in mind:
+
+| Constraint | Limit |
+|---|---|
+| Active schedules per user | 5 |
+| Minimum interval between runs | 60 minutes |
+| Maximum prompt length | 2,000 characters |
+
+<Warning>
+Schedules with intervals shorter than 60 minutes will be rejected. If you need near-real-time monitoring, consider a longer prompt that covers more ground per run.
+</Warning>
+
+## Task status lifecycle
+
+Every scheduled task has a status that tells you where it stands.
+
+| Status | Meaning |
+|---|---|
+| **Active** | Running on schedule. Your task will execute at the next scheduled time. |
+| **Paused** | Manually paused by you. Resume anytime — the next run is recomputed when you do. |
+| **Failed** | Auto-paused after 3 consecutive failures. Requires manual intervention to resume. |
+
+If a task fails three times in a row, Dialog automatically pauses it to prevent wasted credits. When you resume a failed task, the failure counter resets and the next run time is recalculated from the current time.
+
+## Delivery
+
+Scheduled task results are delivered through your configured [channels](/core-concepts/channels). You can choose:
+
+- **Web inbox only** — results appear in the app, ready when you are
+- **Telegram only** — results pushed directly to your Telegram chat
+- **Both** — the same results delivered to web inbox and Telegram simultaneously
+
+You set delivery preferences when creating the schedule, and you can update them at any time without disrupting the schedule itself.
+
+<Tip>
+Ready to create your first schedule? Follow the step-by-step [Setting Up Scheduled Tasks](/guides/setting-up-scheduled-tasks) guide.
+</Tip>

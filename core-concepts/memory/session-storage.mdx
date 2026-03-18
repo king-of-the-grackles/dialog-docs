@@ -1,0 +1,52 @@
+---
+title: Session Storage
+description: How chat sessions and messages are persisted across devices
+icon: "database"
+---
+
+Every conversation with your agent is automatically saved. Session storage captures your full chat history so you can pick up where you left off, from any device.
+
+## How sessions are stored
+
+Messages are persisted to the database immediately as they're sent and received. There's no manual save step and no risk of losing a conversation mid-chat.
+
+Each session captures:
+
+- **Messages** - The full back-and-forth between you and your agent
+- **Tool activity** - Which tools were invoked, what data was fetched
+- **Timestamps** - When each message was sent
+- **Metadata** - Additional context about the interaction
+
+This gives you a complete audit trail of every research query, including what sources were consulted and what your agent did behind the scenes.
+
+## Cross-device sync
+
+Your session history is accessible from any device where you're logged in. Start a research conversation on your laptop, then review the results on your phone. Everything syncs automatically through your account.
+
+<Info>
+Sessions are tied to a specific [agent](/core-concepts/agents/what-is-an-agent). If you have multiple agents, each one maintains its own separate chat history.
+</Info>
+
+## Session vs. workspace
+
+Session storage and [workspace files](/core-concepts/memory/workspace-files) serve different purposes. Understanding the distinction helps you know where to find things.
+
+| | Session Storage | Workspace Files |
+|---|---|---|
+| **What it stores** | Chat messages and conversation history | Files, databases, research notes |
+| **Scope** | One conversation | All conversations and scheduled runs |
+| **Created by** | Every message you send or receive | The agent, when it saves work |
+| **Best for** | Reviewing past conversations | Building persistent knowledge |
+
+Think of sessions as your conversation log and the workspace as your agent's filing cabinet. Sessions capture what was said. The workspace captures what was produced.
+
+## Session lifecycle
+
+Sessions follow a straightforward lifecycle:
+
+- **Created** when you start a new chat with your agent
+- **Updated** in real time as messages are exchanged
+- **Accessible** from [session history](/features/session-management) in the sidebar
+- **Persistent** until you choose to delete them
+
+Starting a new chat creates a fresh session, but your agent's [memory and workspace](/core-concepts/memory/overview) carry over. You get a clean conversation thread without losing any of the context, files, or data your agent has built up.

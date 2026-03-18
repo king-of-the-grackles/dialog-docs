@@ -1,0 +1,52 @@
+---
+title: Memory & Workspace
+description: How Dialog agents remember context and persist data across sessions
+icon: "brain"
+---
+
+Dialog agents use a three-tier memory system that provides continuity across conversations, scheduled tasks, and devices.
+
+## The three tiers of memory
+
+Every agent has three layers of memory, each serving a different purpose. Together, they ensure your agent always knows who it is, what it's working on, and what you've discussed.
+
+| Tier | What it stores | Loaded when | Persists across |
+|---|---|---|---|
+| **Identity Files** | Agent personality, mission, and user context (`SOUL.md`, `PURPOSE.md`, `USER.md`) | Every interaction (auto-loaded) | All sessions and scheduled runs |
+| **Workspace Files** | Task lists, research notes, skills, and databases | On demand, when the agent needs them | All sessions and scheduled runs |
+| **Session Storage** | Chat messages, tool activity, and timestamps | When you open a conversation | All devices where you're logged in |
+
+Identity files define *who* your agent is. Workspace files store *what* your agent is working on. Session storage captures *every conversation* you've had.
+
+## Persistence guarantees
+
+Your agent's memory is tied to the agent itself, not to any individual chat session. This means:
+
+- **Starting a new chat** does not reset memory. Your agent still has access to all workspace files and identity context.
+- **Scheduled tasks** run with full access to the same workspace. A task that writes research notes at 2 AM is readable in your morning chat.
+- **Cross-device access** works automatically. Sign in on another device and your full chat history is there.
+
+<Info>
+The total workspace size limit is **50MB** shared across all files in your agent's workspace, including identity files, research notes, and databases.
+</Info>
+
+## How memory enables continuity
+
+Memory is what turns Dialog from a stateless chatbot into a persistent research partner. Here are a few ways it shows up in practice:
+
+- **Personalized responses** - Your agent reads `USER.md` on every interaction, so it knows your role, industry, and preferences without you repeating them.
+- **Ongoing research** - The agent saves notes to the `research/` directory. When you come back days later and ask a follow-up, it picks up where it left off.
+- **Accumulated knowledge** - Databases in the `databases/` directory let your agent track trends over time, building a richer picture with each research run.
+- **Task management** - `TASKS.md` keeps a running backlog, so your agent knows what's been done and what's still pending.
+
+<CardGroup cols={3}>
+  <Card title="Identity Files" icon="id-card" href="/core-concepts/memory/identity-files">
+    Your agent's personality and context
+  </Card>
+  <Card title="Workspace Files" icon="folder-tree" href="/core-concepts/memory/workspace-files">
+    Persistent research, tasks, and data
+  </Card>
+  <Card title="Session Storage" icon="database" href="/core-concepts/memory/session-storage">
+    Chat history and message persistence
+  </Card>
+</CardGroup>

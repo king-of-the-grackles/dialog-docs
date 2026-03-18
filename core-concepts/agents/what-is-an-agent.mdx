@@ -1,0 +1,50 @@
+---
+title: What is an Agent?
+description: Understanding Dialog's agent model and how agents work
+icon: "robot"
+---
+
+An agent in Dialog is an independent AI research assistant with its own dedicated workspace, tool configuration, and personality. Each agent operates in isolation, maintaining its own memory and context across every interaction.
+
+## Agent architecture
+
+Every agent you create gets its own persistent workspace environment — a dedicated runtime that persists across sessions. This workspace stores your agent's [identity files](/core-concepts/memory/identity-files), uploaded documents, and any research artifacts it generates.
+
+An agent bundles four key components:
+
+- **Workspace** — A persistent workspace environment with up to 50MB of storage for files, notes, and research data
+- **Tool configuration** — A customizable set of [enabled data sources](/core-concepts/tools/tool-preferences) that determine what the agent can access
+- **Session history** — A full record of every research chat and follow-up conversation
+- **Scheduled tasks** — Any automated research or monitoring jobs the agent runs on your behalf
+
+These components work together to give each agent a distinct research capability and memory.
+
+## One default agent
+
+Every Dialog account comes with a **Default Agent** that's ready to use right away. This is the agent you interact with when you first sign in and start asking questions.
+
+The Default Agent works like any other agent — it has its own workspace, tool configuration, and session history. The only difference is that it can't be deleted. Think of it as your home base for research.
+
+You can [create additional agents](/core-concepts/agents/creating-agents) whenever you need a specialized assistant for a different domain or workflow.
+
+## Agent isolation
+
+Agents are fully independent from each other. They don't share workspaces, session histories, tool configurations, or any other data.
+
+This isolation is intentional. It means you can:
+
+- Configure one agent for competitive research and another for content analysis without any bleed-through
+- Give different agents access to different data sources based on their purpose
+- Keep research contexts completely separate across projects or teams
+
+If you need to share information between agents, you can copy relevant findings from one session into another manually.
+
+<Warning>
+Deleting an agent permanently removes its workspace, session history, and all associated data. This action cannot be undone.
+</Warning>
+
+## Lazy provisioning
+
+Agent workspaces are created on first interaction, not when the agent is initially set up. This means your agent's persistent workspace environment spins up the first time you send a query or interact with it.
+
+This approach keeps account creation fast and avoids allocating resources for agents you haven't started using yet. You can create up to **10 concurrent agents** per account, and each one provisions its workspace independently when you first engage with it.

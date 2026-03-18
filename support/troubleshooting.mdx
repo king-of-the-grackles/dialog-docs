@@ -1,0 +1,67 @@
+---
+title: Troubleshooting
+description: Common issues and how to resolve them
+icon: "life-ring"
+---
+
+Running into issues? Here are solutions to the most common problems organized by feature area.
+
+## Agents
+
+<AccordionGroup>
+  <Accordion title="My agent isn't responding">
+    When you use an agent for the first time, its workspace needs to provision. This can take a moment. Wait 10-15 seconds and try sending your message again. If the issue persists, try refreshing the page and starting a new session.
+  </Accordion>
+
+  <Accordion title="I can't delete my agent">
+    The default agent cannot be deleted. If you want to reset it, edit the system prompt in **Settings** and delete any sessions you no longer need. You can delete any other agent from its settings page.
+  </Accordion>
+</AccordionGroup>
+
+## Skills
+
+<AccordionGroup>
+  <Accordion title="My new skill doesn't appear">
+    Skills are not available in the session where they're created. Start a new chat session and the agent will pick up the skill. If it still doesn't appear, check that the SKILL.md file was saved correctly in the `skills/` directory.
+  </Accordion>
+
+  <Accordion title="My skill isn't triggering">
+    The agent uses the skill's description to decide when to activate it. Open the SKILL.md file and make sure the description clearly matches the types of queries where you want the skill to trigger. Be specific about the trigger conditions and try rephrasing your query to align with the skill's defined purpose.
+  </Accordion>
+</AccordionGroup>
+
+## Scheduling
+
+<AccordionGroup>
+  <Accordion title="My scheduled task was paused">
+    Tasks auto-pause after 3 consecutive failures to prevent wasting credits. To fix this, review your prompt for issues — overly broad queries or references to unavailable data are common causes. Check that your delivery channels are still connected, then **resume** the task from your schedule settings.
+  </Accordion>
+
+  <Accordion title="My task isn't running at the expected time">
+    Verify the timezone setting on your schedule matches your local timezone. A task set to run at 9:00 AM in UTC will run at a different time than 9:00 AM in your timezone. Open the schedule and confirm the timezone is correct.
+  </Accordion>
+</AccordionGroup>
+
+## Telegram
+
+<AccordionGroup>
+  <Accordion title="My bot isn't receiving messages">
+    Check two things: first, confirm the webhook is active in your Telegram channel settings. Second, verify that the sender is included in the allowed users list. Only users explicitly added to the allow list can interact with the bot.
+  </Accordion>
+
+  <Accordion title="Messages are getting cut off">
+    Long responses are automatically chunked into multiple Telegram messages due to platform character limits. This is normal behavior. All content is delivered — it may arrive as 2-3 sequential messages rather than one.
+  </Accordion>
+</AccordionGroup>
+
+## Credits
+
+<AccordionGroup>
+  <Accordion title="I ran out of credits">
+    Each research query and each scheduled task execution consumes 1 credit. When your balance hits zero, you can still browse existing sessions and feeds, but you won't be able to run new queries. Visit **Settings** to upgrade your plan or wait for your credits to renew at the start of your next billing cycle.
+  </Accordion>
+</AccordionGroup>
+
+## Still need help?
+
+If you can't find a solution here, check our [FAQ](/support/faq) for additional answers or reach out through the app.

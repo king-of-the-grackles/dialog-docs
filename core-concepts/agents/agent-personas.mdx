@@ -4,9 +4,11 @@ description: Specialized AI agents for different research tasks
 icon: "users"
 ---
 
-# Agent Personas
-
 Dialog offers specialized AI agent personas, each optimized for a different type of research task. Think of them as team members with distinct expertise.
+
+<Info>
+Personas are pre-configured agent profiles. To learn about the underlying agent system and how to create your own, see [What is an Agent?](/core-concepts/agents/what-is-an-agent) and [Creating Agents](/core-concepts/agents/creating-agents).
+</Info>
 
 ## Available personas
 
@@ -43,3 +45,13 @@ You can switch between agent personas from the chat interface. Each persona main
 <Tip>
 Start with the **Research Analyst** persona for your first few queries. It provides the most comprehensive output and helps you understand the depth of data Dialog can access.
 </Tip>
+
+## How personas relate to agents
+
+Each persona is backed by a full [agent](/core-concepts/agents/what-is-an-agent) with its own workspace and memory. When you switch personas, you're switching to a different agent — each with its own conversation history, saved research, and custom skills.
+
+This means your Chief of Staff persona doesn't see the research your Research Analyst has done, and vice versa. Each persona operates in its own isolated workspace with separate session histories, tool configurations, and stored files.
+
+This separation is powerful for keeping different research contexts clean. Your competitive intelligence stays with the persona you used to gather it, and your content research lives with the persona that produced it. If you want to bring insights from one persona into another, reference the findings in a new query.
+
+You can also [create your own agents](/core-concepts/agents/creating-agents) with custom personas tailored to your specific workflow — combining the personality and instructions you need with the data sources that matter most.

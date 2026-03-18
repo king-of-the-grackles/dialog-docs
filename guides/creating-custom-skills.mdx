@@ -1,0 +1,63 @@
+---
+title: Creating Custom Skills
+description: Step-by-step guide to creating and using custom skills
+icon: "hammer"
+---
+
+Custom skills let you teach your agent reusable capabilities tailored to your workflow. Instead of repeating detailed instructions each session, package them into a skill your agent can use automatically.
+
+## Creating a skill
+
+<Steps>
+  <Step title="Ask your agent to create a skill">
+    In a chat session, tell your agent what you need: "Create a skill for [purpose]." The built-in skill creator activates and guides you through the process.
+  </Step>
+
+  <Step title="Define the purpose and triggers">
+    The skill creator asks you about the skill's purpose, when it should trigger, and how it should behave. Be as specific as possible — clear descriptions lead to better results.
+  </Step>
+
+  <Step title="Review the generated SKILL.md">
+    A SKILL.md file is generated in your agent's workspace `skills/` directory. This file contains the full skill definition. Review it and request changes if needed.
+  </Step>
+
+  <Step title="Start a new session to use it">
+    Your skill becomes available starting with your **next** chat session. Open a new conversation and the agent will have access to the skill.
+  </Step>
+</Steps>
+
+<Warning>
+Skills are not available in the session where they're created. You must start a new session for the agent to pick up the new skill.
+</Warning>
+
+## Tips for effective skills
+
+- **Be specific about triggers** — Describe exactly when the skill should activate (e.g., "when the user asks for a competitive analysis" rather than "when researching")
+- **Keep instructions concise** — Aim for under 500 lines in your SKILL.md file. Shorter, focused skills perform better than broad ones.
+- **Include example inputs and outputs** — Show the agent what a good result looks like so it has a clear target
+- **Test with varied queries** — Try different phrasings to make sure the skill triggers reliably
+
+## Skill ideas
+
+<CardGroup cols={2}>
+  <Card title="Research report template">
+    Standardize how your agent formats and structures research findings
+  </Card>
+  <Card title="Competitive analysis framework">
+    Define the dimensions and format for comparing competitors
+  </Card>
+  <Card title="Content brief generator">
+    Have the agent produce content briefs from Reddit research in a consistent format
+  </Card>
+  <Card title="Weekly metrics tracker">
+    Create a repeatable format for tracking community engagement over time
+  </Card>
+</CardGroup>
+
+## Editing and removing skills
+
+You can manually edit any SKILL.md file in your workspace's `skills/` directory to refine behavior. You can also add supporting scripts or reference files alongside the skill definition.
+
+To remove a skill, delete its SKILL.md file from the `skills/` directory. The change takes effect in your next session.
+
+For more on how skills work under the hood, see [Skills](/core-concepts/skills).

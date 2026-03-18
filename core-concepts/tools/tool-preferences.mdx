@@ -1,0 +1,60 @@
+---
+title: Tool Preferences
+description: How to customize which tools and data sources your agent uses
+icon: "sliders"
+---
+
+Dialog gives you fine-grained control over which tools and data sources your agent uses. Preferences cascade from system defaults through user, agent, and session-level overrides.
+
+## Cascading preferences
+
+Tool preferences follow a four-level cascade. Each level can override the one above it.
+
+| Level | What it controls | How to set it | Persists? |
+|---|---|---|---|
+| **System defaults** | Baseline for all users — Reddit Research is enabled | Managed by Dialog | Yes |
+| **User defaults** | Your personal defaults across all agents | **Settings** page | Yes |
+| **Agent defaults** | Per-agent configuration | Agent creation or edit screen | Yes |
+| **Session overrides** | Temporary changes for one chat session | Tool toggles in chat | No |
+
+The cascade flows top to bottom. A session override takes priority over an agent default, which takes priority over your user default, which takes priority over the system default.
+
+<Info>
+Session overrides are temporary — they reset when you start a new chat session. If you want a change to stick, set it at the user or agent level instead.
+</Info>
+
+## Setting user defaults
+
+Your user defaults apply to every agent you interact with, unless that agent has its own overrides.
+
+<Steps>
+  <Step title="Open Settings">
+    Navigate to **Settings** from the sidebar or account menu.
+  </Step>
+  <Step title="Find tool preferences">
+    Look for the **Data Sources** or **Tool Preferences** section.
+  </Step>
+  <Step title="Toggle data sources">
+    Enable or disable the data sources you want active by default. Your changes save automatically.
+  </Step>
+</Steps>
+
+This is the best place to configure tools you always want available — like web search or social media intelligence — without setting them up for each agent individually.
+
+## Agent-level defaults
+
+Each agent can have its own tool configuration that overrides your user defaults. This is useful when you have agents dedicated to specific research areas.
+
+For example, a competitive intelligence agent might have all social media and web sources enabled, while a customer feedback agent only needs Reddit and app store data. Set agent-level defaults when creating or editing an agent.
+
+## Session overrides
+
+Sometimes you need to temporarily enable or disable a tool for a single conversation. Session overrides let you do this without changing any saved preferences.
+
+Use the tool toggles in the chat interface to adjust which data sources are active for the current session. These changes apply immediately to your next query but reset when you start a new session.
+
+This is useful when you want to:
+
+- Narrow your research to a specific source for focused results
+- Temporarily enable a source you don't normally use
+- Test how results differ with different tool combinations

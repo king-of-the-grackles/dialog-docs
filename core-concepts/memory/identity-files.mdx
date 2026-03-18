@@ -1,0 +1,60 @@
+---
+title: Identity Files
+description: The core files that define your agent's personality, mission, and user context
+icon: "id-card"
+---
+
+Identity files are the foundation of your agent's memory. They're automatically loaded into every interaction, giving your agent consistent personality, purpose, and awareness of who you are.
+
+## SOUL.md
+
+`SOUL.md` defines your agent's personality and communication style. It controls how your agent presents itself and interacts with you.
+
+By default, a Dialog agent uses the name "Dialog" with a professional but approachable tone. `SOUL.md` contains the agent name and emoji, a short tagline, persona description and tone guidelines, and behavioral boundaries the agent must follow.
+
+Behavioral boundaries are especially important. They ensure your agent stays grounded in real data -- for example, always citing sources with full URLs, never fabricating data, and flagging low-confidence findings.
+
+## PURPOSE.md
+
+`PURPOSE.md` defines your agent's mission, the topics it focuses on, and how it measures success.
+
+When you first create an agent, `PURPOSE.md` starts with `initialized: false`. During [onboarding](/getting-started/quickstart), Dialog walks you through setting up the agent's purpose by asking about your research goals and areas of focus.
+
+### What PURPOSE.md contains
+
+- **Mission statement** - A clear description of what the agent is built to do
+- **Scope** - The domains, topics, and industries the agent should focus on
+- **Success criteria** - What good output looks like for your use case
+
+<Tip>
+A well-defined purpose makes your agent significantly more useful. The more specific your scope and success criteria, the more focused and relevant your research results will be.
+</Tip>
+
+## USER.md
+
+`USER.md` stores facts about you so the agent can personalize its responses. Like `PURPOSE.md`, it starts with `initialized: false` and gets populated during your first conversation.
+
+Your agent learns about you through natural questions rather than a form. Over time, `USER.md` may include:
+
+- Your role and title
+- Your industry and company
+- Research preferences and priorities
+- Your timezone
+
+The agent references this context on every interaction. If you're a product manager in fintech, your agent will frame research findings through that lens without you having to remind it.
+
+All three identity files are auto-loaded for every interaction, including chat sessions and [scheduled tasks](/core-concepts/scheduling). Whether you're chatting at 9 AM or a scheduled task runs at midnight, the agent operates with the same identity and context.
+
+## Customizing identity files
+
+You can edit identity files directly in your agent's [workspace](/core-concepts/memory/workspace-files) to tune behavior.
+
+Common customizations include:
+
+- **Changing the agent's tone** in `SOUL.md` to be more formal, more casual, or domain-specific
+- **Narrowing the scope** in `PURPOSE.md` to focus the agent on a specific market or competitor set
+- **Updating your details** in `USER.md` if your role or priorities change
+
+<Warning>
+Removing behavioral boundaries from `SOUL.md` (like source citation requirements) may result in less reliable research output. Modify boundaries with care.
+</Warning>

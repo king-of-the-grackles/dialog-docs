@@ -1,0 +1,52 @@
+---
+title: Tools Overview
+description: Understanding the tools and data sources your agent uses for research
+icon: "wrench"
+---
+
+Tools are the capabilities your agent uses to gather information and take actions. Dialog connects to multiple data sources through the Model Context Protocol (MCP), giving your agent access to Reddit, web search, social media, forums, and more.
+
+## What are tools?
+
+Tools are specialized functions your agent calls during research to fetch data, search sources, and interact with external services. Under the hood, Dialog uses the **Model Context Protocol (MCP)** — an open standard for connecting AI agents to data sources — to manage these connections.
+
+You don't need to understand MCP to use Dialog. What matters is that each tool gives your agent a specific capability: searching Reddit, scraping a webpage, pulling Instagram posts, or reading your Gmail. When you ask a question, your agent picks the right tools automatically.
+
+## Tool categories
+
+Dialog organizes tools into categories based on what they do.
+
+| Category | What it covers | Examples |
+|---|---|---|
+| **Research** | Community discussions and forums | Reddit communities, Discourse forums |
+| **Web** | Public web content | Search engines, page scraping, content extraction |
+| **Social Media** | Social platform data | Instagram, Facebook, TikTok, YouTube, X (Twitter) |
+| **Business Intelligence** | Company and professional data | Company profiles, professional databases |
+| **Connected Apps** | Your own tools via OAuth | Gmail, Slack, Google Calendar, Jira, Linear, Notion, and 15+ more |
+
+Each category contains one or more [data sources](/core-concepts/tools/mcp-servers) that your agent can query. You control which categories are active through [tool preferences](/core-concepts/tools/tool-preferences).
+
+## How tools are invoked
+
+You don't need to tell your agent which tools to use — it figures that out from your question.
+
+When you ask something like "What are people saying about Notion on Reddit and Twitter?", the agent:
+
+- **Analyzes your query** to identify the relevant platforms (Reddit, X/Twitter)
+- **Selects the matching tools** from its available data sources
+- **Runs them in parallel** where possible to minimize wait time
+- **Combines the results** into a single, unified response
+
+If a tool isn't enabled in your [preferences](/core-concepts/tools/tool-preferences), the agent skips it and works with what's available. You'll see exactly which tools were invoked in the activity indicators below each response.
+
+<CardGroup cols={2}>
+  <Card title="Data Sources" icon="server" href="/core-concepts/tools/mcp-servers">
+    Available research data sources
+  </Card>
+  <Card title="Built-in Tools" icon="toolbox" href="/core-concepts/tools/built-in-tools">
+    Core agent capabilities
+  </Card>
+  <Card title="Tool Preferences" icon="sliders" href="/core-concepts/tools/tool-preferences">
+    Customizing which tools are active
+  </Card>
+</CardGroup>
