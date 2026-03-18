@@ -1,57 +1,81 @@
 ---
 title: Quick Start
-description: Get your first research result in under 5 minutes
+description: Get up and running with Dialog in under 5 minutes
 icon: "rocket"
 ---
 
-Follow these steps to go from sign-up to your first research insight.
+Follow these steps to go from sign-up to your first interaction with your agent.
 
 <Steps>
   <Step title="Create your account">
-    Head to [app.dialog.tools](https://app.dialog.tools) and sign up with your email. You can use a password or magic link to authenticate.
+    Head to [app.dialog.tools](https://app.dialog.tools) and sign up with your email. No credit card required. You can use a password or magic link to authenticate.
   </Step>
 
-  <Step title="Ask your first question">
-    Once you're in the app, you'll see the research chat. Type a natural language question like:
+  <Step title="Meet your default agent">
+    Once you're in the app, you'll see your chat interface. Your default agent is ready to go with access to 74+ tools and a persistent workspace. Just start talking to it.
+  </Step>
 
+  <Step title="Try your first interactions">
+    Here are a few things to try right away:
+
+    **Save a link**
+    ```
+    Save this for me: https://example.com/interesting-article
+    ```
+    Your agent will scrape the page, summarize it, and file it in your workspace for later.
+
+    **Ask a research question**
     ```
     What are the biggest pain points people have with project management tools?
     ```
+    Dialog searches across Reddit communities, the web, and other sources, then synthesizes findings into a structured brief with citations.
 
-    Dialog will search across Reddit communities, analyze discussions, and synthesize the findings into a structured brief.
-  </Step>
+    **Add a task**
+    ```
+    Add to my task list: Review competitor pricing pages this week
+    ```
+    Your agent tracks it in TASKS.md and can remind you later.
 
-  <Step title="Review your results">
-    Dialog streams results in real time. You'll see:
-    - **Thinking indicators** showing the AI's reasoning process
-    - **Source citations** linking back to original Reddit posts and comments
-    - **Structured findings** organized by theme or sentiment
-
-    Your research is automatically saved to your session history.
+    **Request a content draft**
+    ```
+    Draft a LinkedIn post about why AI agents are becoming a new product surface
+    ```
+    Your agent creates a draft you can iterate on together.
   </Step>
 
   <Step title="Explore further">
     From here you can:
-    - Ask follow-up questions in the same session
+    - Ask follow-up questions in the same session to refine results
     - [Create a Reddit feed](/features/reddit-feeds) to monitor specific communities
-    - [Connect Telegram](/guides/telegram-delivery) for push delivery
+    - [Set up Telegram delivery](/guides/telegram-delivery) for push notifications
+    - [Create additional agents](/core-concepts/agents/creating-agents) with specialized personas
     - Browse your past sessions in the sidebar
   </Step>
 </Steps>
 
-## Example queries to try
+## Things to try
 
 <CardGroup cols={2}>
-  <Card title="Competitive Intelligence">
-    "What are people saying about [competitor] on Reddit? What features do they love and hate?"
+  <Card title="Save & Organize" icon="bookmark">
+    "Save this for me: [paste any URL]" -- Your agent scrapes, enriches, and files it
   </Card>
-  <Card title="Idea Validation">
-    "Are people asking for a tool that does [your idea]? What subreddits discuss this?"
+  <Card title="Competitive Intel" icon="chart-mixed">
+    "What are people saying about [competitor]? What features do they love and hate?"
   </Card>
-  <Card title="Customer Discovery">
-    "What are the most common complaints about [product category] in Reddit discussions?"
+  <Card title="Content Creation" icon="pen-nib">
+    "I have a content idea for LinkedIn: [your idea]. Can you draft it?"
   </Card>
-  <Card title="Market Research">
-    "What trends are emerging in [your industry] based on recent Reddit discussions?"
+  <Card title="Deep Research" icon="magnifying-glass">
+    "Can you build a comprehensive competitive report on [company]? Use all available tools."
+  </Card>
+  <Card title="Task Tracking" icon="list-check">
+    "Add to my task list: [task]. Also, what's currently on my active tasks?"
+  </Card>
+  <Card title="Multi-Source Search" icon="globe">
+    "Can you track down the best tools for [topic]? Use Reddit and web search."
   </Card>
 </CardGroup>
+
+<Tip>
+Your agent gets more useful over time. As you save links, build research, and track tasks, your workspace becomes a searchable knowledge base your agent can reference in future conversations.
+</Tip>

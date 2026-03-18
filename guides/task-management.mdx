@@ -1,0 +1,84 @@
+---
+title: Managing Tasks with Your Agent
+description: Conversational task tracking with your agent's persistent workspace
+icon: "list-check"
+---
+
+Your agent can track tasks, to-dos, and action items conversationally. Everything is stored in a persistent TASKS.md file in your workspace, so your task list carries across sessions.
+
+## Adding tasks
+
+Just tell your agent what to add:
+
+```
+Add to my task list: Review competitor pricing pages this week
+```
+
+```
+Some things I need to add to tasks:
+- Update LinkedIn company page with new messaging
+- Set up Twitter developer account for the new agent
+- Schedule a call with the design team about the landing page
+```
+
+Your agent appends these to TASKS.md and organizes them automatically.
+
+## How TASKS.md works
+
+Your agent maintains a markdown task list in its [workspace](/core-concepts/memory/workspace-files) with three sections:
+
+- **Active** -- Tasks currently in progress
+- **Backlog** -- Tasks queued for future work
+- **Completed** -- Finished tasks with results or summaries
+
+When you add a new task, it goes into **Backlog** by default. As your agent works on things (or you tell it to start something), items move to **Active**. When finished, they move to **Completed**.
+
+## Reviewing your tasks
+
+Ask your agent to show you the current state:
+
+```
+What's on my task list?
+```
+
+```
+What are my active tasks?
+```
+
+```
+Show me everything in the backlog
+```
+
+## Updating and completing tasks
+
+Mark things done conversationally:
+
+```
+I finished the competitor pricing review -- move it to completed
+```
+
+```
+The LinkedIn messaging is done. Also, move the Twitter account setup to active -- I'm starting on that now.
+```
+
+## Tasks from other workflows
+
+Tasks often emerge naturally from other work. Your agent can capture them in context:
+
+- During research: "This is interesting -- add 'investigate their pricing model' to my task list"
+- While saving links: "Save this for me, and add 'review this tool in detail' to tasks"
+- During content creation: "Add 'publish the agent tools post' to active tasks"
+
+## Tips
+
+<Tip>
+You don't need to use specific commands. Natural language like "remind me to..." or "I need to..." works just as well as "add to my task list."
+</Tip>
+
+<Tip>
+Pair task management with [scheduled briefings](/guides/daily-briefings). Your agent can include a task summary in your daily or weekly recap.
+</Tip>
+
+<Tip>
+Your agent remembers your task list across sessions. Start a new conversation days later and ask "what's on my tasks?" -- it will check TASKS.md and give you the current state.
+</Tip>

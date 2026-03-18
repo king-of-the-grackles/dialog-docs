@@ -73,6 +73,10 @@
         "group": "Guides",
         "pages": [
           "guides/effective-queries",
+          "guides/saving-and-organizing",
+          "guides/content-creation",
+          "guides/task-management",
+          "guides/daily-briefings",
           "guides/creating-custom-skills",
           "guides/managing-feeds",
           "guides/setting-up-scheduled-tasks",

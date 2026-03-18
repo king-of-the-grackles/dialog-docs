@@ -1,70 +1,91 @@
 ---
 title: Architecture Overview
-description: How Dialog's core systems work together to power your research
+description: How Dialog's core systems work together
 icon: "sitemap"
 ---
 
-Dialog is built on a modular architecture where agents, memory, tools, skills, channels, and scheduling work together to deliver a powerful research experience. This page provides a high-level map of how these systems connect.
+Dialog is built on a modular architecture where agents, memory, tools, skills, channels, and scheduling work together to power your AI workforce. This page provides a high-level map of how these systems connect.
 
 ## How it all fits together
 
 <CardGroup cols={2}>
   <Card title="Agents" icon="robot" href="/core-concepts/agents/what-is-an-agent">
-    Independent AI assistants with their own workspace, tools, and personality
+    Specialized AI assistants with their own workspace, tools, and personality
   </Card>
   <Card title="Memory & Workspace" icon="brain" href="/core-concepts/memory/overview">
-    Persistent storage that gives your agent continuity across sessions
+    Persistent storage that gives your agent continuity and a growing knowledge base
   </Card>
   <Card title="Tools" icon="wrench" href="/core-concepts/tools/overview">
-    Data sources and capabilities your agent uses to research
+    74+ data sources and integrations your agent uses
   </Card>
   <Card title="Skills" icon="wand-magic-sparkles" href="/core-concepts/skills">
-    Reusable custom tools you teach your agent
+    Reusable custom workflows you teach your agent
   </Card>
   <Card title="Scheduling" icon="clock" href="/core-concepts/scheduling">
-    Automated recurring research tasks
+    Automated recurring research, monitoring, and briefings
   </Card>
   <Card title="Channels" icon="tower-broadcast" href="/core-concepts/channels">
-    Where your research results get delivered
+    Where results get delivered (Telegram, Slack, Discord, WhatsApp)
   </Card>
 </CardGroup>
 
-## The research flow
+## The interaction flow
 
-Every research interaction follows the same path through Dialog's systems, from your initial question to a complete, sourced answer.
+Every interaction follows the same path through Dialog's systems, whether it's a research question, a link to save, or a task to add.
 
 <Steps>
-  <Step title="You ask a question">
-    Type a natural language query in the research chat. Your question can be broad ("What do people think about AI coding tools?") or targeted ("What are the top complaints about Linear's mobile app on Reddit?").
+  <Step title="You send a message">
+    Type anything natural -- a research question, a URL to save, a task to add, a content draft request, or a follow-up to previous work.
   </Step>
 
-  <Step title="Agent selects relevant data sources">
-    Based on your query, the agent determines which [tools](/core-concepts/tools/overview) to use. A question about Reddit sentiment routes to Reddit Research. A question about a competitor's social presence might hit multiple social media sources at once.
+  <Step title="Agent loads context">
+    Your agent loads its identity files (PURPOSE.md, SOUL.md, USER.md), workspace state, and session history. This gives it full context on who you are, what it's been working on, and how to help.
   </Step>
 
-  <Step title="Tools gather information">
-    The selected tools execute in parallel where possible — fetching posts, scraping pages, pulling social data, or querying connected apps. Each tool returns structured results back to the agent.
+  <Step title="Agent selects tools">
+    Based on your message, the agent determines which [tools](/core-concepts/tools/overview) to use. A research question routes to Reddit and web search. A URL triggers web scraping. A calendar request hits your connected Google Calendar.
   </Step>
 
-  <Step title="Agent synthesizes findings">
-    The agent analyzes the raw data, identifies patterns and themes, and assembles a structured research brief. Citations link back to original sources so you can verify anything.
+  <Step title="Tools execute">
+    The selected tools run in parallel where possible -- fetching posts, scraping pages, pulling social data, or querying connected apps. Each tool returns structured results.
   </Step>
 
-  <Step title="Results stream in real time">
-    You see the entire process unfold live — tool activity, the agent's reasoning, and the final output all stream back as they happen. No waiting for a batch result.
+  <Step title="Agent processes and responds">
+    The agent synthesizes results, updates workspace files if needed (saving links, updating tasks, filing research), and streams the response back to you in real time.
   </Step>
 </Steps>
 
+## Real-world workflows
+
+Here's how the systems come together for common use cases:
+
+### Competitive intelligence pipeline
+1. **Save competitors** -- Send URLs as you discover them. Agent scrapes, enriches, and files each one.
+2. **Research** -- Ask the agent to analyze positioning, pricing, and features across your saved competitors.
+3. **Track changes** -- Set up scheduled monitoring to flag competitor updates weekly.
+4. **Brief** -- Get a synthesized competitive brief delivered to Telegram every Monday.
+
+### Content creation workflow
+1. **Capture ideas** -- Send content ideas to your agent as they come to you.
+2. **Research** -- Ask the agent to explore a topic across Reddit and the web for inspiration.
+3. **Draft** -- Request post drafts with specific angles and audiences.
+4. **Iterate** -- Workshop the copy through back-and-forth until it's ready.
+
+### Daily operations
+1. **Morning briefing** -- Scheduled task delivers overnight signals and task summary.
+2. **Throughout the day** -- Save links, add tasks, ask questions, file research.
+3. **End of day** -- Agent produces a recap of everything captured and completed.
+
 ## System boundaries
 
-Each agent in Dialog operates within its own isolated environment. Understanding these boundaries helps you design better research workflows.
+Each agent operates within its own isolated environment.
 
-**Agent isolation.** Every agent has its own persistent workspace environment with dedicated storage, tool configuration, and [skills](/core-concepts/skills). One agent cannot access another agent's workspace, files, or conversation history. This means you can run multiple agents for different projects without any cross-contamination.
+**Agent isolation.** Every agent has its own persistent workspace with dedicated storage, tool configuration, and [skills](/core-concepts/skills). One agent cannot access another agent's workspace, files, or conversation history.
 
-**Tool configuration is per-agent.** Each agent can have different [tool preferences](/core-concepts/tools/tool-preferences) — one agent might have social media sources enabled while another only uses Reddit and web search. You control this at the agent level or override it per session.
+**Tool configuration is per-agent.** Each agent can have different [tool preferences](/core-concepts/tools/tool-preferences) -- one agent might have social media sources enabled while another only uses Reddit and web search.
 
-**Scheduled tasks share the workspace.** When you set up [scheduled research](/core-concepts/scheduling), those tasks run in the same workspace as your chat sessions. This means scheduled tasks can read and write the same files, use the same skills, and build on the same memory your agent has from interactive conversations.
+**Scheduled tasks share the workspace.** When you set up [scheduled research](/core-concepts/scheduling), those tasks run in the same workspace as your chat sessions. This means scheduled tasks can read and write the same files, use the same skills, and build on the same memory from interactive conversations.
 
 <Info>
-Agents are fully independent by design. If you need to share research between agents, export results via [channels](/core-concepts/channels) or use connected apps to store findings in shared tools like Notion or Google Docs.
+Agents are fully independent by design. If you need to share research between agents, use connected apps to store findings in shared tools like Notion or Google Docs.
 </Info>
