@@ -46,21 +46,48 @@ Telegram isn't just for receiving scheduled results. You can chat with your agen
 
 Messages are formatted for Telegram's interface with bold text, code blocks, and clickable links. Long responses are automatically split into chunks at the 4,000-character-per-message limit so nothing gets cut off.
 
+## Slack
+
+Connect your Slack workspace to chat with your agent in DMs or channels. Unlike Telegram's self-hosted bot model, Slack uses an OAuth install flow — click **Add to Slack** in Settings and authorize the app.
+
+<Steps>
+  <Step title="Install the app">
+    Go to **Settings > Channels** and click **Add to Slack**. Authorize Dialog in your workspace.
+  </Step>
+
+  <Step title="Chat in DMs">
+    Send a direct message to the Dialog bot. DMs are always enabled — no allowlist needed.
+  </Step>
+
+  <Step title="Enable channels">
+    To use the bot in specific channels, add them to your allowlist in Settings. The bot only responds in channels you've explicitly allowed.
+  </Step>
+</Steps>
+
+Your agent processes messages serially per thread, so responses stay coherent even under rapid-fire queries. Long responses are automatically split at Slack's message limits, and errors are surfaced as ephemeral messages visible only to you.
+
+| Feature | Details |
+|---|---|
+| DM support | Always enabled |
+| Channel support | Allowlisted channels only |
+| Mentions | `@Dialog` in allowed channels |
+| Progress indicators | Emoji reactions + live message updates |
+| Connection model | One workspace per Dialog account |
+
 ## Multi-channel delivery
 
-A single scheduled task can deliver to multiple channels at the same time. When you configure a schedule, you can select both web inbox and Telegram to receive the same results simultaneously.
+A single scheduled task can deliver to multiple channels at the same time. When you configure a schedule, you can select web inbox, Telegram, and Slack to receive the same results simultaneously.
 
-This is useful when you want immediate push notifications via Telegram while keeping a permanent, searchable record in your web inbox. There's no extra credit cost for multi-channel delivery — you're charged per execution, not per channel.
+This is useful when you want immediate push notifications via Telegram or Slack while keeping a permanent, searchable record in your web inbox. There's no extra credit cost for multi-channel delivery — you're charged per execution, not per channel.
 
 ## Future channels
 
 Dialog is expanding its channel support. Planned integrations include:
 
 - **Discord** — deliver results to a Discord server or DM
-- **Slack** — push research to Slack channels or threads
 - **SMS** — receive summaries via text message
 - **Email** — get formatted research briefs in your inbox
 
 <Tip>
-For detailed setup instructions, see the [Telegram Delivery](/guides/telegram-delivery) guide.
+For detailed setup instructions, see the [Telegram Delivery](/guides/telegram-delivery) or [Slack Integration](/guides/slack-integration) guides.
 </Tip>

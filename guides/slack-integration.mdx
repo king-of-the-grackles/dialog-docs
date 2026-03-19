@@ -1,0 +1,109 @@
+---
+title: Slack Integration
+description: Connect your Slack workspace to chat with your agent and receive research results
+icon: "hashtag"
+---
+
+Dialog integrates with Slack so you can chat with your research agent directly from your workspace. Send queries in DMs or mention the bot in channels — results are delivered right where your team already works.
+
+## Connecting your workspace
+
+<Steps>
+  <Step title="Open channel settings">
+    Navigate to **Settings > Channels** in the Dialog app.
+  </Step>
+
+  <Step title="Install the Slack app">
+    Click **Add to Slack**. You'll be redirected to Slack's authorization page where you grant Dialog access to your workspace.
+  </Step>
+
+  <Step title="Authorize permissions">
+    Review the requested permissions and click **Allow**. Dialog needs access to read messages in channels where it's mentioned, send responses, and react to messages.
+  </Step>
+
+  <Step title="Confirm the connection">
+    After authorization, you'll be redirected back to Dialog. The Channels settings page will show your connected workspace name and active status.
+  </Step>
+</Steps>
+
+<Info>
+Each Dialog account can connect one Slack workspace. The connection is per-user, so team members each connect their own accounts.
+</Info>
+
+## Chatting with your agent
+
+Once connected, you can interact with your agent in two ways:
+
+- **Direct messages** — Send a DM to the Dialog bot for private research conversations. DMs are always enabled.
+- **Channel mentions** — Mention the bot in any allowed channel to run research queries visible to your team.
+
+Your agent processes messages one at a time per conversation thread, ensuring responses stay coherent even when multiple requests come in quickly.
+
+### Live progress
+
+When your agent is working on a request, you'll see:
+
+1. An eyes reaction on your message to acknowledge it was received
+2. A placeholder message with progress updates as research runs
+3. The final response replacing the placeholder, with a checkmark reaction
+
+If something goes wrong, you'll see a private error message that only you can see — keeping channels clean for the rest of your team.
+
+## Managing allowed channels
+
+By default, the bot only responds to direct messages. To enable it in specific channels, you need to add those channels to your allowlist.
+
+<Steps>
+  <Step title="Go to channel settings">
+    Navigate to **Settings > Channels** and scroll to the Slack section.
+  </Step>
+
+  <Step title="Add a channel">
+    Enter the channel ID and an optional display name, then click **Add**. You can find a channel's ID in Slack by right-clicking the channel name and selecting **View channel details** — the ID is at the bottom of the details panel.
+  </Step>
+
+  <Step title="Invite the bot">
+    Make sure the Dialog bot is a member of any channel you've allowlisted. In Slack, type `/invite @Dialog` in the channel.
+  </Step>
+</Steps>
+
+You can remove channels from the allowlist at any time. The bot will stop responding in removed channels immediately.
+
+## Use cases
+
+<CardGroup cols={2}>
+  <Card title="Team research hub">
+    Designate a channel for research queries so your whole team can see and build on findings
+  </Card>
+  <Card title="Quick lookups">
+    DM the bot for fast, private research without leaving Slack
+  </Card>
+  <Card title="Scheduled delivery">
+    Pair with scheduled tasks to push daily briefings directly to a Slack channel
+  </Card>
+  <Card title="Async workflows">
+    Start research from Slack, close the app, and come back to the results in-thread later
+  </Card>
+</CardGroup>
+
+## Formatting
+
+Research results are formatted for Slack's interface:
+
+- Bold text, code blocks, and links render natively in Slack
+- Long responses are automatically split into multiple messages so nothing gets cut off
+- Citations and URLs are preserved as clickable links
+
+## Connection health
+
+Dialog automatically monitors your Slack connection. If the connection becomes inactive (for example, if the app is uninstalled from your workspace), the status indicator in Settings will change from active to inactive.
+
+You can click **Re-sync Connection** to re-validate your connection at any time. If the token has been revoked, you'll need to reconnect by clicking **Add to Slack** again.
+
+## Disconnecting Slack
+
+To disconnect your workspace, go to **Settings > Channels** and click **Disconnect Workspace** next to your Slack connection. This removes the stored connection and channel allowlist from Dialog. Your research history in the app is unaffected.
+
+<Tip>
+For an overview of all available delivery channels, see [Channels](/core-concepts/channels).
+</Tip>

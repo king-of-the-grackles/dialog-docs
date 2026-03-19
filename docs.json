@@ -81,6 +81,7 @@
           "guides/managing-feeds",
           "guides/setting-up-scheduled-tasks",
           "guides/telegram-delivery",
+          "guides/slack-integration",
           "guides/managing-agents",
           "guides/billing-and-credits"
         ]
