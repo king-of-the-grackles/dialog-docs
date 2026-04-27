@@ -24,11 +24,15 @@ Dialog uses a per-user bot model for Telegram delivery. Instead of a shared bot,
   </Step>
 
   <Step title="Register the bot token in Dialog">
-    Go to **Settings** in Dialog and paste your bot token in the Telegram integration section.
+    Go to **Settings > Channels** in Dialog and paste your bot token in the Telegram integration section.
+  </Step>
+
+  <Step title="Pick a default agent">
+    Choose which agent handles new Telegram conversations. This is the agent that answers by default; users can switch per-conversation with the `/agent` command.
   </Step>
 
   <Step title="Add allowed users">
-    Specify which Telegram users are allowed to interact with your bot. This keeps your research private.
+    Only Telegram users on this allowlist can interact with your bot. Add them by their numeric Telegram User ID (with an optional label). To find a user's ID, have them message **@userinfobot** on Telegram.
   </Step>
 </Steps>
 
@@ -37,6 +41,7 @@ Once connected, your Telegram bot supports these commands:
 | Command | What it does |
 |---|---|
 | `/new` | Start a new research session |
+| `/agent` | Switch the agent handling this conversation |
 | `/history` | View recent sessions |
 | `/tools` | List available data sources |
 | `/credits` | Check your credit balance |
@@ -60,7 +65,7 @@ Connect your Slack workspace to chat with your agent in DMs or channels. Unlike 
   </Step>
 
   <Step title="Enable channels">
-    To use the bot in specific channels, add them to your allowlist in Settings. The bot only responds in channels you've explicitly allowed.
+    To use the bot in specific channels, add them to your allowlist in Settings. Each allowed channel is mapped to a specific agent via a dropdown, so `#competitive-intel` can route to a research-focused agent while `#growth` routes to a content-focused one. To find a channel's ID, right-click its name in Slack and select **View channel details** — the ID is at the bottom.
   </Step>
 </Steps>
 
@@ -70,6 +75,7 @@ Your agent processes messages serially per thread, so responses stay coherent ev
 |---|---|
 | DM support | Always enabled |
 | Channel support | Allowlisted channels only |
+| Per-channel agents | Each allowed channel routes to the agent you select |
 | Mentions | `@Dialog` in allowed channels |
 | Progress indicators | Emoji reactions + live message updates |
 | Connection model | One workspace per Dialog account |
@@ -80,13 +86,12 @@ A single scheduled task can deliver to multiple channels at the same time. When 
 
 This is useful when you want immediate push notifications via Telegram or Slack while keeping a permanent, searchable record in your web inbox. There's no extra credit cost for multi-channel delivery — you're charged per execution, not per channel.
 
-## Future channels
+## Coming soon
 
-Dialog is expanding its channel support. Planned integrations include:
+Dialog is expanding its channel support. Two integrations are already visible in **Settings > Channels** as *Coming Soon*:
 
-- **Discord** — deliver results to a Discord server or DM
-- **SMS** — receive summaries via text message
-- **Email** — get formatted research briefs in your inbox
+- **Discord** — deliver results and chat with your agent via a Discord server or DM
+- **WhatsApp** — receive briefings and run quick research via WhatsApp
 
 <Tip>
 For detailed setup instructions, see the [Telegram Delivery](/guides/telegram-delivery) or [Slack Integration](/guides/slack-integration) guides.

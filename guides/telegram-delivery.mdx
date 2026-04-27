@@ -1,52 +1,80 @@
 ---
 title: Telegram Delivery
-description: Get research results pushed to your Telegram chat
+description: Connect a Telegram bot to chat with your agent and receive research results on the go
 icon: "paper-plane"
 ---
 
-Dialog can deliver research results directly to your Telegram account. This is useful for scheduled research or when you want to receive findings without opening the app.
+Dialog uses a per-user Telegram bot model — you create and register your own bot so you control exactly who can interact with it. Once connected, you can chat with your agent directly in Telegram and receive scheduled research results without opening the app.
+
+<Info>
+For the high-level overview of how channels work, see [Channels](/core-concepts/channels).
+</Info>
 
 ## Setting up Telegram
 
 <Steps>
-  <Step title="Open Settings">
-    Navigate to **Settings** in the Dialog app.
+  <Step title="Create a bot with @BotFather">
+    Open Telegram and search for **@BotFather**. Use the `/newbot` command, give your bot a name and a handle, and @BotFather will reply with a **bot token**. Keep it handy — you'll paste it into Dialog in the next step.
   </Step>
 
-  <Step title="Connect Telegram">
-    In the integrations section, click **Connect Telegram**. Follow the prompts to link your Telegram account.
+  <Step title="Register the bot in Dialog">
+    Go to **Settings > Channels** in Dialog. In the Telegram section, paste your bot token and save. Dialog connects to your bot and shows it as **Active** with the bot handle and registered timestamp.
   </Step>
 
-  <Step title="Verify the connection">
-    Dialog will send a test message to your Telegram chat to confirm the connection is working.
+  <Step title="Choose a default agent">
+    Use the **Default Agent** dropdown to pick which agent handles new Telegram conversations. This is the agent that replies by default; users can switch per-conversation with the `/agent` command.
+  </Step>
+
+  <Step title="Add allowed users">
+    Only Telegram users on your allowlist can talk to your bot. For each user, add their **numeric Telegram User ID** (with an optional label like their name). To look up a user's ID, have them message **@userinfobot** on Telegram — it replies with their ID.
+  </Step>
+
+  <Step title="Say hello">
+    Open Telegram and send `/new` to your bot. Your default agent should respond. From there you can use any command below or just chat.
   </Step>
 </Steps>
 
+## Bot commands
+
+| Command | What it does |
+|---|---|
+| `/new` | Start a new research session |
+| `/agent` | Switch the agent handling this conversation |
+| `/history` | View recent sessions |
+| `/tools` | List available data sources |
+| `/credits` | Check your credit balance |
+| `/help` | Show all available commands |
+
 ## How delivery works
 
-Once connected, Dialog can push research results to your Telegram chat:
+Once connected, your agent can push research results to your Telegram chat:
 
-- Results are formatted for readability in Telegram's interface
-- Long research briefs are automatically split into multiple messages
-- Links and citations are preserved as clickable Telegram links
+- Results are formatted for readability in Telegram (bold, code blocks, clickable links)
+- Long research briefs are split into multiple messages at Telegram's 4,000-character per-message limit so nothing gets cut off
+- Citations and URLs are preserved as clickable links
+- You can pair Telegram delivery with [scheduled tasks](/core-concepts/scheduling) for automated daily or weekly briefings
+
+## Connection health
+
+If your bot connection drifts, click **Re-sync Webhook** in **Settings > Channels**. If the bot token has been revoked, create a new bot with @BotFather and register the new token.
 
 ## Use cases
 
 <CardGroup cols={2}>
   <Card title="Morning briefing">
-    Schedule daily research to be delivered to Telegram before your workday starts
+    Schedule a daily digest to be delivered to Telegram before your workday starts.
   </Card>
   <Card title="Competitor alerts">
-    Get notified when there's new discussion about your competitors
+    Get pushed whenever a feed or competitor page has new signal.
   </Card>
   <Card title="Async research">
-    Kick off research in the app, close it, and get results in Telegram later
+    Kick off research in the app, close it, and receive results in Telegram later.
   </Card>
   <Card title="Team sharing">
-    Forward research results from Telegram to team channels
+    Forward research results from Telegram to team channels or individuals.
   </Card>
 </CardGroup>
 
-## Disconnecting Telegram
+## Disconnecting
 
-To disconnect your Telegram account, go to **Settings** and click **Disconnect** next to the Telegram integration. Your research history in the app is unaffected.
+To disconnect your bot, go to **Settings > Channels** and click **Disconnect Bot** next to the Telegram connection. Your research history in the app is unaffected — you can reconnect (or register a different bot) at any time.

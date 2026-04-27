@@ -1,63 +1,95 @@
 ---
 title: Reddit Feeds
-description: Create curated feeds to monitor Reddit communities
+description: Ask your agent to build curated Reddit feeds you can revisit whenever you want
 icon: "rss"
 ---
 
-Reddit feeds let you create curated collections of subreddits to monitor. Instead of manually checking multiple communities, see all the latest posts in one consolidated view.
+Reddit feeds let you group subreddits into curated collections your agent can monitor, summarize, and revisit. Feeds live in your workspace — not as a separate sidebar UI — and are created and updated by asking your agent.
+
+Under the hood, your agent uses the built-in **`reddit-feed-creator`** skill (plus the Reddit Research tool) to discover relevant communities and save them as a feed you can reference by name in any future conversation.
 
 ## Creating a feed
 
-<Steps>
-  <Step title="Click Create Feed">
-    In the sidebar, click the **Create Feed** button to open the feed builder.
-  </Step>
+Just tell your agent what you want to track. A few patterns that work well:
 
-  <Step title="Add subreddits">
-    Search for subreddits by name using the autocomplete search. Add as many communities as you want to your feed.
-  </Step>
+```
+Create a feed for indie SaaS founders. Find the most active subreddits
+and save it as "indie-saas".
+```
 
-  <Step title="Save your feed">
-    Give your feed a name and save it. It will appear in your sidebar for quick access.
-  </Step>
-</Steps>
+```
+Build me a Reddit feed called "ai-dev-tools" that covers the communities
+where developers talk about Claude, Cursor, Windsurf, and agent frameworks.
+```
 
-## Discover communities from a URL
+```
+Create a feed tracking Notion's audience — use URL analysis on notion.so
+to find subreddits where their target users hang out.
+```
 
-Don't know which subreddits to follow? Dialog can analyze a website and suggest relevant Reddit communities:
+Your agent will run the `reddit-feed-creator` skill, propose subreddits, and confirm the list with you before saving. The feed is stored in your workspace so it persists across sessions.
 
-1. Enter a URL (e.g., your competitor's website or a product page)
-2. Dialog identifies relevant topics and keywords
-3. Get a list of suggested subreddits to add to your feed
+## Using a feed later
 
-## Browsing your feed
+Once a feed is saved, reference it by name anytime:
 
-Click any feed in the sidebar to see a consolidated view of hot posts from all the subreddits in that feed:
+```
+What's trending in "indie-saas" this week?
+```
 
-- **Sorted by popularity** - Posts ranked by engagement
-- **Infinite scroll** - Keep scrolling to load more posts
-- **Read tracking** - Posts you've already viewed are grayed out
-- **Direct links** - Click any post to view it on Reddit
+```
+Summarize the top posts from "ai-dev-tools" from the last 7 days
+and flag anything about Claude Code.
+```
+
+```
+Who are the most active commenters in "indie-saas"? Build a list
+with their usernames and what they tend to post about.
+```
+
+Your agent reads the feed definition, queries the subreddits via the Reddit Research tool, and returns a structured summary with sources.
+
+## Discovering communities from a URL
+
+If you don't know which subreddits to track, ask your agent to analyze a URL and recommend communities:
+
+```
+Analyze linear.app and tell me which subreddits their audience hangs out in.
+```
+
+```
+Look at our site at acme.com — what subreddits should I be monitoring
+for our target users?
+```
+
+The agent will extract a site description, identify audience personas, and surface the most relevant high-signal subreddits — filtering out oversized general-purpose communities like r/all. You can then save the recommendations as a feed in the same conversation.
 
 ## Managing feeds
 
-- **Edit** a feed to add or remove subreddits
-- **Delete** feeds you no longer need
-- Create **multiple feeds** for different topics or research areas
+Feed management is also conversational. Ask your agent to:
+
+- **List your feeds** — *"What Reddit feeds do I have saved?"*
+- **Add subreddits** — *"Add r/sideproject and r/startups to my indie-saas feed"*
+- **Remove subreddits** — *"Drop r/entrepreneur from indie-saas — too noisy"*
+- **Rename or delete** — *"Delete the ai-dev-tools feed"*
 
 ## Use cases
 
 <CardGroup cols={2}>
   <Card title="Competitive monitoring">
-    Create a feed with subreddits where people discuss your competitors
+    *"Create a feed tracking where people discuss Notion, Obsidian, and Roam."*
   </Card>
   <Card title="Industry tracking">
-    Follow communities in your industry to spot trends early
+    *"Build a feed for indie game developers — focus on active communities with real conversations."*
   </Card>
   <Card title="Customer discovery">
-    Monitor subreddits where your target audience hangs out
+    *"Monitor subreddits where founders of early-stage SaaS products hang out."*
   </Card>
   <Card title="Idea validation">
-    Track communities related to the problem you're solving
+    *"Create a feed for communities discussing knowledge management tools, then pull the top pain points this week."*
   </Card>
 </CardGroup>
+
+<Tip>
+Feeds pair well with [scheduled tasks](/core-concepts/scheduling) — ask your agent to generate a weekly digest of a feed and deliver it to Telegram or Slack automatically.
+</Tip>

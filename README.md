@@ -21,10 +21,10 @@
 
 Dialog is an AI agent platform that gives product teams a parallel workforce of specialized assistants. Each agent has its own persistent workspace, access to 74+ connected tools, and memory that builds over time.
 
-- **Named agent personas** — Deploy a Chief of Staff, Research Analyst, Content Strategist, or build your own
+- **Start with a Chief of Staff** — Every account begins with a default agent. Add specialized presets (Social Media Manager, Product Analytics Agent) or build custom personas as you scale
 - **74+ tools connected** — Research across Reddit, social media, web, Gmail, Slack, Jira, Linear, Notion, and more
 - **Persistent workspace** — Every link saved, every research note, every task tracked across sessions
-- **Multi-channel delivery** — Get briefings via Telegram, Slack, Discord, or WhatsApp
+- **Multi-channel delivery** — Get briefings via Telegram or Slack today (Discord and WhatsApp coming soon)
 - **Custom skills & scheduling** — Teach your agents reusable workflows and automate recurring research
 
 ## What people use Dialog for

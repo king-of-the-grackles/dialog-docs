@@ -1,28 +1,48 @@
 ---
 title: Feed Discovery
-description: Discover relevant Reddit communities from any website URL
+description: Ask your agent to discover relevant Reddit communities from any website URL
 icon: "compass"
 ---
 
-Enter any website URL and Dialog analyzes it to find the Reddit communities most relevant to your audience — no manual searching required.
+Don't know which subreddits to track? Give your agent a URL — your own site, a competitor's page, or a product in your space — and it analyzes the content to surface the Reddit communities where that audience is active.
+
+Under the hood, this uses the same `reddit-feed-creator` skill described in [Reddit Feeds](/features/reddit-feeds). You don't invoke the skill directly; you just ask.
 
 ## How it works
 
+Send your agent a URL with a discovery request. A few patterns that work well:
+
+```
+Analyze linear.app and find the subreddits their audience hangs out in.
+Recommend 10-15 high-signal communities.
+```
+
+```
+Look at our product page at example.com — which Reddit communities should
+we be monitoring for our target users?
+```
+
+Your agent will:
+
 <Steps>
-  <Step title="Enter your website URL">
-    Paste any URL into the discovery tool. This can be your own site, a competitor's page, or a product in your space. Dialog visits the page and analyzes its content.
+  <Step title="Visit and summarize the URL">
+    Extract a 2-3 sentence site description from the page content.
   </Step>
 
-  <Step title="Review the analysis">
-    Dialog extracts a 2-3 sentence site description, identifies 3 or more audience personas, and generates 12-18 targeted keywords. Results stream in real time so you can watch the analysis unfold.
+  <Step title="Identify audience personas">
+    Generate 3 or more distinct user profiles likely to visit the site.
   </Step>
 
-  <Step title="Select subreddits">
-    Based on the analysis, Dialog recommends subreddits ranked by relevance and community size. Mega-subreddits like r/all and r/popular are filtered out automatically so you get focused, high-signal communities.
+  <Step title="Extract keywords">
+    Pull 12-18 topic, product, and pain-point keywords to seed the subreddit search.
   </Step>
 
-  <Step title="Create your feed">
-    Pick the subreddits that match your goals and save them as a curated [feed](/features/reddit-feeds) for ongoing monitoring.
+  <Step title="Recommend subreddits">
+    Rank subreddits by relevance and community size, filtering out oversized general-purpose communities like r/all and r/popular.
+  </Step>
+
+  <Step title="Save as a feed (optional)">
+    Confirm the list with your agent and it saves them as a curated feed you can reference by name later.
   </Step>
 </Steps>
 
@@ -40,7 +60,7 @@ These components work together to match your site against Reddit communities whe
 
 ## Better results, fewer distractions
 
-Dialog's recommendations are designed to surface communities where real conversations happen. The discovery engine automatically filters out oversized, general-purpose subreddits that add noise without value.
+Recommendations are designed to surface communities where real conversations happen. The discovery engine automatically filters out oversized, general-purpose subreddits that add noise without value.
 
 <Tip>
 Run discovery against multiple URLs to compare results. Try your homepage, a competitor's landing page, and a relevant blog post to build a well-rounded feed.
@@ -48,6 +68,4 @@ Run discovery against multiple URLs to compare results. Try your homepage, a com
 
 ## From discovery to monitoring
 
-Once you create a feed from your discovery results, it appears in your sidebar for quick access. You can continue adding subreddits manually or run discovery again with a different URL.
-
-For details on browsing and managing your feeds, see [Reddit Feeds](/features/reddit-feeds) and [Managing Feeds](/guides/managing-feeds).
+Once you save a feed from the discovery results, you can reference it by name in any future conversation — e.g. *"Summarize the top posts in my indie-saas feed from this week"*. For details on revisiting and managing saved feeds, see [Reddit Feeds](/features/reddit-feeds) and [Managing Feeds](/guides/managing-feeds).
