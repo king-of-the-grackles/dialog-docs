@@ -4,39 +4,61 @@ description: Organize and maintain your Reddit feed collections
 icon: "folder-open"
 ---
 
-Reddit feeds are curated collections of subreddits that let you monitor multiple communities in one view. Here's how to organize them effectively.
+Reddit feeds are curated collections of subreddits that live in your workspace. All feed management happens conversationally — you ask your agent to create, edit, or delete feeds, and it uses the built-in `reddit-feed-creator` skill to make the changes.
 
 ## Feed organization tips
 
 ### Create feeds by purpose
 
-Instead of one large feed, create focused feeds for different research goals:
+Instead of one large feed, create focused feeds for different research goals. Ask your agent to:
 
-- **Competitors** - Subreddits where people discuss your competitors
-- **Industry** - Communities covering your broader industry
-- **Customers** - Subreddits where your target audience hangs out
-- **Tech stack** - Communities discussing the technologies you use
+```
+Create these feeds for me:
+  - "competitors" — subreddits where people discuss Notion, Obsidian, Roam
+  - "industry" — communities covering knowledge management tools broadly
+  - "customers" — where indie researchers and PKM power users post
+  - "tech-stack" — communities for the technologies we build on
+```
 
-### Use website discovery
+### Use URL analysis for discovery
 
-When creating a feed, use the URL analysis feature to discover relevant subreddits you might not know about. Enter a competitor's URL or a product page to find where those topics are discussed.
+When you don't know what to include, let the agent suggest subreddits by analyzing a URL:
 
-## Browsing tips
+```
+Analyze competitor.com and add any relevant subreddits to my "competitors" feed.
+```
 
-- **Scroll for more** - Feeds use infinite scroll to load additional posts
-- **Track what you've read** - Visited posts are visually distinguished so you can focus on new content
-- **Click through** - Each post links directly to the original Reddit thread
+## Working with saved feeds
 
-## When to use feeds vs. research chat
+Feeds persist across sessions, so you can ask your agent to use one anytime:
 
-| Use case | Best tool |
+- **Browse recent posts** — *"What's trending in my industry feed this week?"*
+- **Dig into a thread** — *"Summarize the top comments on the pricing post you mentioned from r/saas"*
+- **Compare feeds** — *"Show me the themes in common between my competitors and customers feeds"*
+- **Schedule a digest** — *"Send me a weekly digest of my competitors feed to Telegram every Monday at 9 AM"*
+
+## Editing feeds
+
+All edits are conversational:
+
+| Goal | Ask your agent |
 |---|---|
-| Monitoring ongoing discussions | Reddit Feeds |
-| One-time deep research | Research Chat |
-| Discovering new communities | Research Chat (then add to a feed) |
-| Daily check-in on communities | Reddit Feeds |
-| Answering a specific question | Research Chat |
+| List feeds | *"What Reddit feeds do I have?"* |
+| Add subreddits | *"Add r/sideproject and r/startups to indie-saas"* |
+| Remove subreddits | *"Drop r/entrepreneur from indie-saas — too noisy"* |
+| Rename | *"Rename indie-saas to founder-communities"* |
+| Delete | *"Delete the ai-dev-tools feed"* |
+
+## When to use feeds vs. one-off research
+
+| Use case | Best approach |
+|---|---|
+| Monitoring ongoing discussions | Saved feed + scheduled digest |
+| One-time deep research | Direct chat — ask a focused question |
+| Discovering new communities | Ask the agent to analyze a URL, then save recommendations as a feed |
+| Daily check-in across communities | Feed with a scheduled morning digest |
+| Answering a specific question | Direct chat |
 
 <Tip>
-Use Research Chat to discover relevant subreddits, then add the best ones to a feed for ongoing monitoring.
+Use one chat to discover relevant subreddits by asking the agent, then ask it to save the best ones as a named feed. From then on, the feed is a shorthand you can reference anywhere.
 </Tip>

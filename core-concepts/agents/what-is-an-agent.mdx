@@ -21,20 +21,20 @@ These components work together to give each agent a distinct capability and grow
 
 ## Named personas
 
-Agents come with pre-configured [personas](/core-concepts/agents/agent-personas) optimized for different workflows:
+Agents come with configurable [personas](/core-concepts/agents/agent-personas) optimized for different workflows:
 
-- **Chief of Staff** -- Strategic assistant for managing tasks, saving links, organizing research, and daily briefings
-- **Research Analyst** -- Deep-dive researcher for competitive intelligence, market analysis, and comprehensive reports
-- **Content Strategist** -- Content-focused assistant for ideation, drafting posts, and workshopping marketing copy
-- **Custom Agent** -- Build your own persona with a name and instructions tailored to your needs
+- **Chief of Staff** -- Your default agent. Strategic assistant for managing tasks, saving links, organizing research, and daily briefings.
+- **Social Media Manager** -- A preset you can add for social-first workflows: content ideation, drafting posts, managing feeds.
+- **Product Analytics Agent** -- A preset focused on product metrics, funnels, and user behavior analysis.
+- **Custom Agent** -- Build your own persona with a name and instructions tailored to your needs.
 
 Each persona shapes how the agent approaches tasks, structures its output, and communicates with you. See [Agent Personas](/core-concepts/agents/agent-personas) for details.
 
 ## One default agent
 
-Every Dialog account comes with a **Default Agent** that's ready to use right away. This is the agent you interact with when you first sign in.
+Every Dialog account comes with a **Chief of Staff** agent that's ready to use right away. This is the agent you interact with when you first sign in, and the one remaining after any others are removed.
 
-The Default Agent works like any other agent -- it has its own workspace, tool configuration, and session history. The only difference is that it can't be deleted. Think of it as your home base.
+Chief of Staff works like any other agent -- it has its own workspace, tool configuration, and session history. The only difference is that it can't be deleted. Think of it as your home base.
 
 You can [create additional agents](/core-concepts/agents/creating-agents) whenever you need a specialized assistant for a different domain or workflow.
 
@@ -44,7 +44,7 @@ Agents are fully independent from each other. They don't share workspaces, sessi
 
 This isolation is intentional. It means you can:
 
-- Run a Chief of Staff for day-to-day operations and a Research Analyst for deep competitive dives without any bleed-through
+- Run a Chief of Staff for day-to-day operations and a Product Analytics Agent for metrics work without any bleed-through
 - Give different agents access to different tools based on their purpose
 - Keep research contexts completely separate across projects
 
@@ -67,4 +67,4 @@ Deleting an agent permanently removes its workspace, session history, and all as
 
 Agent workspaces are created on first interaction, not when the agent is initially set up. This keeps account creation fast and avoids allocating resources for agents you haven't started using yet.
 
-You can create up to **10 concurrent agents** per account, and each one provisions its workspace independently when you first engage with it.
+Agent caps depend on your plan -- see [Billing & Credits](/guides/billing-and-credits) for the per-tier limits. Each agent provisions its workspace independently when you first engage with it.

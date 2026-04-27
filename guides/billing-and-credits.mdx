@@ -1,42 +1,70 @@
 ---
 title: Billing & Credits
-description: Understand how billing and credits work in Dialog
+description: Understand Dialog's plans, credits, and how billing works
 icon: "credit-card"
 ---
 
-Dialog uses a credit-based billing system. Each research query consumes credits based on the complexity and data sources used.
+Dialog uses a credit-based billing system. Each plan includes a monthly credit allotment, plus different caps on agents and scheduled workflows. Every plan runs on the same frontier AI models — higher tiers give you more capacity, not smarter agents.
 
-## How credits work
+## Plans
 
-- Each research query uses a variable number of credits depending on:
-  - The complexity of the question
-  - How many data sources are consulted
-  - The length of the AI analysis
-- Your current credit balance is displayed in the app header
-- You'll receive a warning when your balance is running low
+| Plan | Price | Monthly credits | Agents | Scheduled workflows | Notable features |
+|---|---|---|---|---|---|
+| **Free** | $0/mo | 25 (one-time, capped) | 1 | — | 7 days chat history · All 74+ tools included |
+| **Starter** | $59/mo | 50 | 1 | 3 | Persistent memory · Delivered to Telegram automatically |
+| **Pro** *(Most Popular)* | $179/mo | 200 | 5 | 3 per agent (15 total) | Agents coordinate and hand off work · Full persistent workspace |
+| **Team** | $479/mo | 600 | 15 | 3 per agent (45 total) | Shared workspace across all agents · Multiple team members |
+| **Accelerate** | Custom | Shaped around your needs | Everything in Team | + | 3 implementation sessions with the founding team · Done-for-you agent & workflow build · Dedicated Slack channel · Quarterly business review |
+
+Want the Accelerate tier? [Schedule a call](https://calendly.com/chris_ivester/dialog-mvp-agent-setup) with the founding team.
+
+## What's a credit?
+
+One credit is one task or research prompt sent to your agent. A single credit might pull Reddit discussions across five communities, scrape a competitor's pricing page, and deliver a structured summary to your Telegram — all in one shot. You're charged per execution, not per tool call or per channel, so multi-channel delivery doesn't multiply your usage.
 
 ## Checking your balance
 
-Your credit balance is always visible in the top navigation bar. For detailed usage information, go to **Settings** to see:
+Your credit balance is always visible in the **sidebar footer** (Credit Usage meter). For detailed usage info, open **Settings > Billing & Usage** to see:
 
-- Current credit balance
-- Subscription tier
-- Usage history
-- Billing details
+- Current plan and credits remaining
+- % of monthly quota used
+- Manage Payment Methods (opens Stripe)
+- Plan picker with Upgrade / Downgrade / Cancel actions inline
 
 ## Managing your subscription
 
-Dialog integrates with Stripe for payment processing. From Settings, you can:
+All plan changes happen inline on the **Billing & Usage** tab in Settings. Your current plan is labeled "Current Plan", and every other plan card shows **Upgrade** or **Downgrade** (or **Cancel Plan** on your current tier).
 
-- **View your current plan** and usage
-- **Manage your subscription** through the Stripe Customer Portal
-- **Update payment methods** and billing information
-- **View invoices** and payment history
+Click **Manage Payment Methods** to open Stripe for card updates, invoices, and receipts.
 
-<Info>
-Click **Manage Subscription** in Settings to open the Stripe Customer Portal, where you can update your plan, payment method, and billing details.
-</Info>
+## FAQ
 
-## Need more credits?
+<AccordionGroup>
+  <Accordion title="What happens when I run out of credits?">
+    You won't be able to send new messages until you upgrade your plan or your monthly credits reset. Your existing sessions, workspaces, and agent data remain fully accessible.
+  </Accordion>
 
-If you're running low on credits or need a higher tier, visit the subscription management page in Settings to upgrade your plan.
+  <Accordion title="Do unused credits roll over?">
+    It depends on your plan. Free plan credits don't roll over and are capped at 25. Paid plans (Starter, Pro, Team) roll over unused credits to the next month indefinitely — they never expire as long as your subscription is active.
+  </Accordion>
+
+  <Accordion title="Can I upgrade or downgrade anytime?">
+    Yes. You can change plans at any time. Upgrades take effect immediately and your existing credit balance carries over. Downgrades take effect at the end of your current billing period.
+  </Accordion>
+
+  <Accordion title="What happens to my credits when I upgrade?">
+    You keep them. Your existing balance is preserved as bonus credits, and you receive your new plan's full monthly allocation on top. For example, upgrading from Starter with 30 credits to Pro gives you 30 + 200 = 230 credits immediately.
+  </Accordion>
+
+  <Accordion title="Do all plans use the same AI models?">
+    Yes. Every Dialog plan runs on the same frontier models. We don't downgrade intelligence based on your tier. You get the same capability at every level, just at different scale.
+  </Accordion>
+
+  <Accordion title="How does billing work?">
+    Paid plans are billed monthly starting from your subscription date. You can manage your payment method, view invoices, and download receipts from **Settings > Billing & Usage > Manage Payment Methods**.
+  </Accordion>
+
+  <Accordion title="How do I cancel my subscription?">
+    You can cancel anytime from **Settings > Billing & Usage**. When you cancel, you'll keep access to your current plan's features until the end of your billing period, then your account will revert to the Free plan.
+  </Accordion>
+</AccordionGroup>
